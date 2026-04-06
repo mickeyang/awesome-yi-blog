@@ -3,22 +3,24 @@ project:
 
 website:
   description: "A blog of Awesome Yi"
-  # site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
+  site-url: https://awesomeyi-blog.share.connect.posit.cloud
   title: "Awesome Yi"
+  image: profile.png
   navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "About Me"
+        href: about.qmd
     right:
-      - about.qmd
       - icon: linkedin
         href: https://www.linkedin.com/in/mickeyang/
       # - icon: github
         # href: https://github.com/
-      # - icon: bluesky
-        # href: https://bsky.app/
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      - simplex
     css: styles.css
 
 
