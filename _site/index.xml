@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Awesome Yi</title>
+<link>https://awesomeyi-blog.share.connect.posit.cloud/</link>
+<atom:link href="https://awesomeyi-blog.share.connect.posit.cloud/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog of Awesome Yi</description>
+<image>
+<url>https://awesomeyi-blog.share.connect.posit.cloud/profile.png</url>
+<title>Awesome Yi</title>
+<link>https://awesomeyi-blog.share.connect.posit.cloud/</link>
+<height>144</height>
+<width>144</width>
+</image>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Sun, 05 Apr 2026 16:00:00 GMT</lastBuildDate>
+<item>
+  <title>Welcome To My Blog</title>
+  <dc:creator>Awesome Yi</dc:creator>
+  <link>https://awesomeyi-blog.share.connect.posit.cloud/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="welcome" class="level1">
+<h1>Welcome!</h1>
+<p>Hello there. I am Awesome Yi. This is my first post in this <a href="https://quarto.org/">Quarto</a> blog website. I am making a living as a Data Scientist in my everyday life. I am not a very active blogger, but I do share <strong>The World in My Eyes</strong> from time to time.</p>
+<p>Outside my Data Life, I do enjoy walking and hiking in nature, as well as appreciating all natural elements. I occasioally make random movements with all sorts of music. You may call it “dancing” or “moving”. I also like traveling (I was a Southeast Asian backpacker over 15 years ago).</p>
+<p>I used to live in New Zealand, but I am now staying with my whanau (family) in a small town in China. Come to China to see adorable gaint Pandas.</p>
+<p>Last but not least, many thanks to open-source technologies from <a href="https://posit.co/">Posit</a> and <a href="https://quarto.org/">Quarto</a>. They helped me constrcut this personal blog relatively easy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://awesomeyi-blog.share.connect.posit.cloud/posts/welcome/panda-huahua.jpg" class="img-fluid figure-img"></p>
+<figcaption>A famous cute panda named “Hua Hua” (meaning a flower), in Chengdu Panda Park</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>diary</category>
+  <guid>https://awesomeyi-blog.share.connect.posit.cloud/posts/welcome/</guid>
+  <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
