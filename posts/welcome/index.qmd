@@ -1,0 +1,19 @@
+---
+title: "Welcome To My Blog"
+author: "Awesome Yi"
+date: "2026-04-06"
+categories: [diary]
+---
+
+# Welcome!
+
+Hello there. I am Awesome Yi. This is my first post in this [Quarto](https://quarto.org/) blog website. I am making a living as a Data Scientist in my everyday life.  I am not a very active blogger, but I do share **The World in My Eyes** from time to time.
+
+Outside my Data Life, I do enjoy walking and hiking in nature, as well as appreciating all natural elements. I occasioally make random movements with all sorts of music. You may call it "dancing" or "moving". I also like traveling (I was a Southeast Asian backpacker over 15 years ago).
+
+I used to live in New Zealand, but I am now staying with my whanau (family) in a small town in China. Come to China to see adorable gaint Pandas. 
+
+Last but not least, many thanks to open-source technologies from [Posit](https://posit.co/) and [Quarto](https://quarto.org/). They helped me constrcut this personal blog relatively easy.
+
+
+![A famous cute panda named "Hua Hua" (meaning a flower), in Chengdu Panda Park](panda-huahua.jpg)
