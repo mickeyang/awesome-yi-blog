@@ -1,0 +1,32 @@
+---
+title: "Mermaid Flowchart"
+description: "How to use plain text to draw Mermaid Flowchart"
+author: "Awesome Yi"
+date: "2026-04-19"
+categories: [mermaid]
+# image: cover-image.jpg
+---
+# Basic syntax
+
+## Graph Types
+
+- left to right (LR)
+- top to bottom (TD)
+
+## Shapes
+
+- [rectangle]
+- {diamond}
+- (rounded)
+- ((circle))
+
+## Line Types
+
+--> arrow line
+-.- dashed line
+--- solid line
+A --> B (from node A to node B)
+
+# References
+
+[Official documentation](https://mermaid.js.org/ecosystem/tutorials.html)

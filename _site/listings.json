@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/mermaid-flowchart/index.html",
       "/posts/vocabulary/index.html",
       "/posts/welcome/index.html"
     ]

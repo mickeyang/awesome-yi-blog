@@ -17,7 +17,52 @@
 <width>144</width>
 </image>
 <generator>quarto-1.9.36</generator>
-<lastBuildDate>Fri, 17 Apr 2026 16:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 18 Apr 2026 16:00:00 GMT</lastBuildDate>
+<item>
+  <title>Mermaid Flowchart</title>
+  <dc:creator>Awesome Yi</dc:creator>
+  <link>https://awesomeyi-blog.share.connect.posit.cloud/posts/mermaid-flowchart/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="basic-syntax" class="level1">
+<h1>Basic syntax</h1>
+<section id="graph-types" class="level2">
+<h2 class="anchored" data-anchor-id="graph-types">Graph Types</h2>
+<ul>
+<li>left to right (LR)</li>
+<li>top to bottom (TD)</li>
+</ul>
+</section>
+<section id="shapes" class="level2">
+<h2 class="anchored" data-anchor-id="shapes">Shapes</h2>
+<ul>
+<li>[rectangle]</li>
+<li>{diamond}</li>
+<li>(rounded)</li>
+<li>((circle))</li>
+</ul>
+</section>
+<section id="line-types" class="level2">
+<h2 class="anchored" data-anchor-id="line-types">Line Types</h2>
+<p>–&gt; arrow line -.- dashed line — solid line A –&gt; B (from node A to node B)</p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p><a href="https://mermaid.js.org/ecosystem/tutorials.html">Official documentation</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>mermaid</category>
+  <guid>https://awesomeyi-blog.share.connect.posit.cloud/posts/mermaid-flowchart/</guid>
+  <pubDate>Sat, 18 Apr 2026 16:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Recent vocabulary</title>
   <dc:creator>Awesome Yi</dc:creator>
