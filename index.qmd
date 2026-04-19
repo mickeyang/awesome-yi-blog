@@ -9,8 +9,16 @@ listing:
   categories: true
   sort-ui: false
   filter-ui: false
+  exclude:
+    author: "draft*"
 page-layout: full
 title-block-banner: true
 ---
+```{r}
+#| echo=FALSE
+today <- as.character(Sys.Date())
+```
 
+This blog site was recently updated on **`{r} today`**.
 
+<br>
