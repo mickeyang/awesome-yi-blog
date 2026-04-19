@@ -1,3 +1,4 @@
 /.quarto/
 post-template.txt
 **/*.quarto_ipynb
+posts/example/
