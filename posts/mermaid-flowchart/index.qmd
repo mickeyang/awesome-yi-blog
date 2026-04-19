@@ -22,10 +22,10 @@ categories: [mermaid]
 
 ## Line Types
 
---> arrow line
--.- dashed line
---- solid line
-A --> B (from node A to node B)
+- --> arrow line
+- -.- dashed line
+- --- solid line
+- A --> B (from node A to node B)
 
 # References
 
