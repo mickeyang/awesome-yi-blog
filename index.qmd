@@ -17,6 +17,7 @@ title-block-banner: true
 ```{r}
 #| echo=FALSE
 today <- as.character(Sys.Date())
+# rsconnect::writeManifest(contentCategory = "site")
 ```
 
 This blog site was recently updated on **`{r} today`**.
