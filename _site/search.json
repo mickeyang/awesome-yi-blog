@@ -11,7 +11,7 @@
     "href": "posts/mermaid-flowchart/index.html",
     "title": "Mermaid Flowchart",
     "section": "",
-    "text": "left to right (LR)\ntop to bottom (TD)\n\n\n\n\n\n[rectangle]\n{diamond}\n(rounded)\n((circle))\n\n\n\n\n–&gt; arrow line -.- dashed line — solid line A –&gt; B (from node A to node B)"
+    "text": "left to right (LR)\ntop to bottom (TD)\n\n\n\n\n\n[rectangle]\n{diamond}\n(rounded)\n((circle))\n\n\n\n\n\n–&gt; arrow line\n-.- dashed line\n— solid line\nA –&gt; B (from node A to node B)"
   },
   {
     "objectID": "posts/mermaid-flowchart/index.html#graph-types",
@@ -32,7 +32,14 @@
     "href": "posts/mermaid-flowchart/index.html#line-types",
     "title": "Mermaid Flowchart",
     "section": "",
-    "text": "–&gt; arrow line -.- dashed line — solid line A –&gt; B (from node A to node B)"
+    "text": "–&gt; arrow line\n-.- dashed line\n— solid line\nA –&gt; B (from node A to node B)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Awesome Yi",
+    "section": "",
+    "text": "This blog site was recently updated on 2026-04-19.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMermaid Flowchart\n\n\n\nmermaid\n\n\n\nHow to use plain text to draw Mermaid Flowchart\n\n\n\n\n\nApr 19, 2026\n\n\nAwesome Yi\n\n\n\n\n\n\n\n\n\n\n\n\nRecent vocabulary\n\n\n\nvocabulary\n\n\n\n\n\n\n\n\n\nApr 18, 2026\n\n\nAwesome Yi\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\ndiary\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nAwesome Yi\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -42,11 +49,18 @@
     "text": "Welcome to my corner of the internet!\nI’ll be honest: I’m not exactly a “post every day” kind of person. I’m more of a “post when inspiration strikes” type.\nThis blog is essentially The World in My Eyes — a digital junk drawer of everything I find fascinating. One day we might be diving deep into the Data Science realm, and the next, we might be exploring religions, sharing random philosophical shower thoughts, or just looking at some cool photos I snapped.\nIt’s a bit of a mixed bag, but hey, so is life. Thanks for stopping by!"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Awesome Yi",
+    "objectID": "posts/example/index.html",
+    "href": "posts/example/index.html",
+    "title": "Draft",
     "section": "",
-    "text": "Mermaid Flowchart\n\n\n\nmermaid\n\n\n\nHow to use plain text to draw Mermaid Flowchart\n\n\n\n\n\nApr 19, 2026\n\n\nAwesome Yi\n\n\n\n\n\n\n\n\n\n\n\n\nRecent vocabulary\n\n\n\nvocabulary\n\n\n\n\n\n\n\n\n\nApr 18, 2026\n\n\nAwesome Yi\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\ndiary\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nAwesome Yi\n\n\n\n\n\nNo matching items"
+    "text": "Today’s date is 2026-04-19."
+  },
+  {
+    "objectID": "posts/example/index.html#example-r-code-chunk",
+    "href": "posts/example/index.html#example-r-code-chunk",
+    "title": "Draft",
+    "section": "",
+    "text": "Today’s date is 2026-04-19."
   },
   {
     "objectID": "posts/vocabulary/index.html",
