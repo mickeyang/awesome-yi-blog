@@ -2,5 +2,3 @@
 post-template.txt
 **/*.quarto_ipynb
 posts/example/
-posts/*/*.jpg
-posts/*/*.png
