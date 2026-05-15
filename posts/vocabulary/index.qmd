@@ -7,6 +7,8 @@ categories: [vocabulary]
 
 Some English and Chinese vocabulary
 
+# 2026-04-18
+
 - 绥(sui)阳
 
 - caveat (warning)
@@ -24,3 +26,13 @@ Some English and Chinese vocabulary
 - hoax （a plan to deceive a large group of people; a trick）
 
 - malicious (intended to harm or upset other people)	
+
+# 2026-05-15
+
+- linchpin = lynchpin (a person or thing vital to an enterprise or organization, 核心人物和thing)
+
+- idempotent （无意义的重复）
+
+- finicky (难取悦， 挑剔的人)
+
+- demarcate from/by (separate, 分开，隔离开)
