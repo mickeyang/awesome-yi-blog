@@ -1,0 +1,12 @@
+{
+  "hash": "36fc6e993d02575307f45cf354c925fc",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"OPENCLAW 数字员工\"\ndescription: \"Set up my first A.I. assistant\"\nauthor: \"Awesome Yi\"\ndate: \"2026-05-20\"\ncategories: [A.I.]\nimage: openclaw.png\n---\n\n> 使用Openclaw，打开自己的专属AI Agent 数字员工。\n\n> 需要做什么的时候，可以先试试问龙虾会不会，如果做得不对可以指导它持续进化。\n\n# Openclaw 简介\n\nOpenclaw，又称龙虾，是一个开源、自托管的AI Agent系统。由奥地利程序员Peter Steinberger于2025年11月推出，可作为个性化AI助手使用。\n\n# Openclaw 安全提醒\n\n- **在自己对安全设置有充分把握前，不要使用龙虾处理敏感数据。因为所有的数据都会上传给大模型厂商，使用值得信赖的大模型供应商，并且慎重中转服务[^1]。** 北京大学计算中心给出了使用Openclaw的[安全指引](https://cc.pku.edu.cn/notice/795.html)。\n\n- 任何AI，其输出结果都需要人工的核验，不能完全交由它。\n\n# 安装Openclaw\n\n如果是完全的新手，推荐从**智谱AutoClaw**[^2]或云厂商一键部署开始。\n\nAutoClaw需在后台持续运行，为确保AI智能体任务不中断，需要保持电脑开机（避免休眠和关机）。\n\n安装完成后，运行诊断命令检查环境是否正常。\n\n```{code}\nopenclaw doctor\n```\n\n# 特别鸣谢\n\n以上内容来自与开源课程《OpenClaw 赋能科研实战》， [课程链接](https://www.gitlink.org.cn/p58142970/OpenClaw-Course).\n\n[^1]: 中转 API 就是介于开发者与 AI 官方服务之间的一道“代理层”。大模型 API 中转平台是部署在应用与 AI 服务商之间的网关层，统一管理多家模型提供商的 API 调用，提供负载均衡、成本追踪、鉴权管理和故障转移能力。\n[^2]: AutoClaw是智谱AI推出的Openclaw桌面客户端。\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
