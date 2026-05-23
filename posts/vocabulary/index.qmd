@@ -48,3 +48,10 @@ Some English and Chinese vocabulary
 - 受限制盈余 （指公司账面利润中被强制保留、无法自由分配给股东的那部分，通常需再投入设备更新或满足监管要求，因此不能算作真正可支配的赚钱能力。巴菲特用它区分“赚钱机器”和“烧钱机器”。
 
 - 砵酒 （port wine, 葡萄牙北部杜罗河谷产的**加强型甜**红葡萄酒，发酵时加白兰地停糖，入口焦糖巧克力味，配茶或餐后皆宜。）
+
+# 2026-05-24
+
+- bilerplate (text that can be copied and used in legal documents or in computer programs, with only very small changes, （在法律文件或者计算机程序中略微修改即可使用的）文件样板，文件范例)
+
+- `DRY` programming principle (**D**o not **R**epeat **Y**ourself)
+
