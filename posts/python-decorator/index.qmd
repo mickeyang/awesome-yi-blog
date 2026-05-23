@@ -15,6 +15,10 @@ At its core, a Python decorator is a tool that allows you to modify or extend th
 
 Think of it like wrapping a gift: the gift inside (your function) stays exactly the same, but the wrapping paper (the decorator) adds extra flair, protection, or features before someone opens it.
 
+The below screenshot shows its workflow.
+
+![Decorator flow.](python-decorator.png)
+
 # How to create a decorator?
 
 ```
