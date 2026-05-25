@@ -4,6 +4,7 @@ description: "苏轼 (宋代)"
 author: "Awesome Yi"
 date: "2026-05-25"
 categories: [poetry]
+image: cover.jpg
 ---
 
 人生到处知何似，
@@ -18,4 +19,4 @@ categories: [poetry]
 往日崎岖还记否，
 路长人困蹇驴嘶。
 
-![诗歌赏析](https://www.gushiwen.cn/shiwenv_31bc973d596d.aspx)
+[诗歌赏析](https://www.gushiwen.cn/shiwenv_31bc973d596d.aspx)
