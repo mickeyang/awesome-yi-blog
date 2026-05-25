@@ -1,0 +1,100 @@
+---
+title: "Week One Day One (W1D1)"
+description: "Testing"
+author: "Awesome Yi"
+date: "2026-05-25"
+categories: [Week1]
+---
+
+# Generator
+
+## Why
+
+For Lazy Evaluation, instead of loading massive data into constraited RAM, we can use the `Generator` mechanism to prevent the Out of Memory (OOM) error.
+
+## What
+
+A generator computes data **one item at a time**, only when asked. It acts as a smart conveyor belt, delivering one row, pausing, waiting for you to process it, and then fetching the next.
+
+## How
+
+Using the `yield` keyword instead of the `return` keyword in functions.
+
+Example:
+
+```
+import sys
+
+# THE WRONG WAY (Memory-Heavy List approach)
+def read_sensor_data_list(num_rows):
+    results = []
+    for i in range(num_rows):
+        results.append({"sensor_id": i, "reading": i * 1.5})
+    return results  # Everything is stored in RAM here
+
+#  THE ADVANCED WAY (Memory-Light Generator approach)
+def read_sensor_data_generator(num_rows):
+    for i in range(num_rows):
+        yield {"sensor_id": i, "reading": i * 1.5}  # Yields one by one, uses almost zero RAM
+```
+
+# Lab
+
+```
+# LAB DATA
+
+mock_raw_logs = [
+    "INFO: User logged in",
+    "ERROR: Database connection timeout",
+    "DEBUG: Query executed in 0.02s",
+    "ERROR: Out of memory in container 4",
+    "INFO: Report exported successfully"
+]
+
+# MY SOLUTION TO PARSE A LOG FILE
+
+def parse_log_generator(log_file):
+    for line in log_file:
+        log_level, log_content = line.split(":", 1)  # stop split at the first colon
+        if log_level == "ERROR":
+            print(f"Error message is: {log_content}")
+            yield {
+                "level" : type, 
+                "message": log_content
+            }
+```
+
+When the generator function `parse_log_generator` is executed, it creates a **factory conveyor belt** that is currently turned **OFF**. The data hasn't been created yet; the machine is just waiting for you to press the start button.
+
+METHOD 1: 
+
+You can use a `for` loop to turn **ON** the generator conveyor belt. Refer to the code below.
+
+```
+# 1. Create the generator object (the conveyor belt)
+log_stream = parse_log_generator(mock_raw_logs)
+
+# 2. Consume it using a for loop
+for log_entry in log_stream:
+    print(f"Successfully processed: {log_entry['message']}")
+```
+
+METHOD 2:
+
+You can also use the `next()` function to examine records line by line, as follows.
+
+```
+log_stream = parse_log_generator(mock_raw_logs)
+
+# Pull the first error
+first_error = next(log_stream)
+print(first_error)  # Output: {'level': 'ERROR', 'message': 'Database connection timeout'}
+
+# Pull the second error
+second_error = next(log_stream)
+print(second_error)  # Output: {'level': 'ERROR', 'message': 'Out of memory in container 4'}
+
+# What happens if we call it a third time?
+# Since there are no more errors in our mock data, Python will raise a 'StopIteration' exception.
+next(log_stream)  # Raises StopIteration
+```
