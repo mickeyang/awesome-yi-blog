@@ -10,7 +10,7 @@ categories: [Week1]
 
 ## Why
 
-For Lazy Evaluation, instead of loading massive data into constraited RAM, we can use the `Generator` mechanism to prevent the Out of Memory (OOM) error.
+For Lazy Evaluation, instead of loading massive data into constrained RAM, we can use the `Generator` mechanism to prevent the Out of Memory (OOM) error.
 
 ## What
 
@@ -64,7 +64,7 @@ def parse_log_generator(log_file):
             }
 ```
 
-When the generator function `parse_log_generator` is executed, it creates a **factory conveyor belt** that is currently turned **OFF**. The data hasn't been created yet; the machine is just waiting for you to press the start button. What how to start the conveyor belt? Do not rush, see below. ^_^
+When the generator function `parse_log_generator` is executed, it creates a **factory conveyor belt** that is currently turned **OFF**. The data hasn't been created yet; the machine is just waiting for you to press the start button. What how to start the conveyor belt? Do not rush, see below.
 
 **METHOD 1** 
 

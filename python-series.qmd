@@ -18,4 +18,4 @@ title-block-banner: true
 # image: cover-image.jpg
 ---
 
-> This is a four-week learning journey designed by the Google's Gemini AI. The entire learning series are listed as the following by weeks and by days.
+> This is a four-week learning journey designed by the Google's Gemini AI. The entire learning series is listed by weeks and by days.
