@@ -10,6 +10,8 @@ website:
     left:
       - text: "Home"
         href: index.qmd
+      - text: "Advance Python"
+        href: python-series.qmd
       - text: "About Me"
         href: about.qmd
     right:

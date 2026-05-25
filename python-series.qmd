@@ -1,0 +1,21 @@
+---
+title: "Advance Python Skills "
+description: "with the help of Google's Gemini A.I."
+author: "Awesome Yi"
+date: "2026-05-25"
+listing: 
+    contents: "advance-python-skill/*/index.qmd"
+    type: default
+    sort: "date asc"
+    feed: true
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    exclude:
+        author: "draft*"
+page-layout: full
+title-block-banner: true
+# image: cover-image.jpg
+---
+
+> This is a four-week learning journey designed by the Google's Gemini AI. The entire learning series are listed as the following by weeks and by days.
