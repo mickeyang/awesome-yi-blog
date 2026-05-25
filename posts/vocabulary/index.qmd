@@ -55,3 +55,9 @@ Some English and Chinese vocabulary
 
 - `DRY` programming principle (**D**o not **R**epeat **Y**ourself)
 
+- 窠臼 （Ke Jiu, 比喻陈旧、一成不变的规格模式)
+
+- 鹣鲽情深 (Jian Die Qing Shen，比喻人与人之间感情深厚，尤指夫妻之间的恩爱和相濡以沫)
+
+- 本质化思维 (把事物某个属性当成绝对本质，并用它去解释一切现象，它省力、能预测，却也让人执着于“学生就该在教室”这类标签，把环境变化看成反常，从而减低心理承受力。)
+
