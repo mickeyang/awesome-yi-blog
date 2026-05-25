@@ -64,9 +64,9 @@ def parse_log_generator(log_file):
             }
 ```
 
-When the generator function `parse_log_generator` is executed, it creates a **factory conveyor belt** that is currently turned **OFF**. The data hasn't been created yet; the machine is just waiting for you to press the start button.
+When the generator function `parse_log_generator` is executed, it creates a **factory conveyor belt** that is currently turned **OFF**. The data hasn't been created yet; the machine is just waiting for you to press the start button. What how to start the conveyor belt? Do not rush, see below. ^_^
 
-METHOD 1: 
+**METHOD 1** 
 
 You can use a `for` loop to turn **ON** the generator conveyor belt. Refer to the code below.
 
@@ -79,7 +79,7 @@ for log_entry in log_stream:
     print(f"Successfully processed: {log_entry['message']}")
 ```
 
-METHOD 2:
+**METHOD 2**
 
 You can also use the `next()` function to examine records line by line, as follows.
 
