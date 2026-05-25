@@ -2,7 +2,7 @@
 title: "和子由渑池怀旧"
 description: "苏轼 (宋代)"
 author: "Awesome Yi"
-date: ""
+date: "2026-05-25"
 categories: [poetry]
 ---
 
