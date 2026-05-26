@@ -1,0 +1,64 @@
+---
+title: "Week One Day Two (W1D2)"
+description: "Testing"
+author: "Awesome Yi"
+date: "2026-05-26"
+categories: [Week1]
+---
+
+# itertools
+
+The `itertools` is a built-in library of Python. 
+
+Highlights of this library:
+
+- written entirely in highly optimized C;
+
+- designed to consume generators/iterators and manipulate data streams at blazing-fast speeds without ever loading the data into RAM.
+
+## itertools.islice()
+
+This function allows you to specify interested positions within a iterable stream, so that we will NOT need to load the entire stream into RAM before hand.
+
+```
+mini_stream = itertools.islice(stream, 5, 10)
+
+for row in mini_stream:
+    print(row)
+
+# Output: Row_6, Row_7, Row_8, Row_9, Row_10
+```
+
+## itertools.chain()
+
+This function can merge multiple streams.
+
+## itertools.compress()
+
+This function can filter streams with a boolean mask.
+
+# Lab
+
+```
+# LAB DATA
+batch_1 = ["HEADER: SYSTEM A DATA", "100.2", "101.5", "100.9"]
+batch_2 = ["HEADER: SYSTEM B DATA", "99.4", "98.7"]
+
+# MY LAB SOLUTION
+
+import itertools as itl
+
+merged_batches = itl.chain(
+    itl.islice(batch_1, 1, None),  # Use None to reach to the end of a stream
+    itl.islice(batch_2, 1, None), 
+    )
+
+for batch in merged_batches:
+    print(batch)
+```
+
+## Lesson learnt today
+
+- use `len()`, do not use `__len__()`. The `__len__()` function is designed for the language itself, not for the developers.
+
+- iterable objects include `lists`, `tuples`, or `generators`.
