@@ -1,0 +1,81 @@
+---
+title: "Week One Day Two (W1D3)"
+description: "Mastering `collections`"
+author: "Awesome Yi"
+date: "2026-05-26"
+categories: [Week1]
+---
+
+# Why it matters?
+
+Python’s **built-in** collections module provides specialized data structures written in C that make aggregations cleaner, faster, and more Pythonic.
+
+# How to use it?
+
+## `defaultdict` function
+
+```
+from collections import defaultdict
+
+# Tell it to automatically create a empty list [] for any new key
+user_activity = defaultdict(list)
+
+for user_id, page in clickstream_stream:
+    # No "if" statement needed! If user_id is new, it creates a list and appends to it.
+    user_activity[user_id].append(page)
+```
+
+## `Counter` function
+
+A `Counter` is a special type of Python dictionary specifically designed for counting objects. Unlike a standard Python dictionary, a Counter won't throw a `KeyError` if you try to access a key that doesn't exist yet. Instead, it assumes the missing key has a starting count of 0.
+
+```
+from collections import Counter
+
+# Imagine streaming a list of status codes
+codes = ["200", "500", "200", "404", "500", "200"]
+
+status_counts = Counter(codes)
+print(status_counts) 
+# Output: Counter({'200': 3, '500': 2, '404': 1})
+
+# Bonus: Get the top 2 most common errors instantly
+print(status_counts.most_common(2))
+# Output: [('200', 3), ('500', 2)]
+```
+
+# Lab
+
+```
+# LAB DATA
+
+mock_event_stream = [
+    ("adv_123", "impression"),
+    ("adv_456", "impression"),
+    ("adv_123", "click"),
+    ("adv_123", "impression"),
+    ("adv_456", "click"),
+    ("adv_789", "impression")
+]
+
+# MY LAB SOLUTION
+
+from collections import defaultdict, Counter
+import itertools as itl
+
+def aggregate_ad_data(event_stream):
+    event_types = defaultdict(list)
+    global_counts = Counter()
+
+    for adv_id, event_type in event_stream:
+        event_types[adv_id].append(event_type)  # this is aggregation
+        global_counts[event_type] += 1  # this is counting, when a new event_type comes in, starting it from 0.
+
+    return event_types, global_counts
+
+result = aggregate_ad_data(mock_event_stream)
+
+result[0]["adv_123"]
+result[1]["impression"]
+result[1]["click"]
+```
