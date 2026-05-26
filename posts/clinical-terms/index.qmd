@@ -8,11 +8,11 @@ categories: [clinical]
 
 # Systolic Blood Pressure (BP)
 
-来自古希腊的词根`syn`, 代表together。所以`Systolic`就是代表心脏together做功的结果，也就是contraction blood pressure (**收缩压**)，在中文语境，常被成为**高压**。心脏在收缩（contraction）的时候，会把血液一下子输送到身体的各个器官和末梢，所以血管内的压力会显著升高。
+来自古希腊的词根`syn`, 代表together。所以`Systolic`就是代表心脏together做功的结果，也就是contraction blood pressure (**收缩压**)，在中文语境，常被成为**高压**。心脏在收缩（contraction）的时候，会把血液一下子输送到身体的各个器官和末梢，所以血管内的压力会显著升高。健康的高压在**120 mm/Hg**以下。
 
 # Diastolic Blood Pressure (BP)
 
-来自古希腊的词根`dia`, 代表apart。所以`Diastolic`就是代表心脏apart做功的结果，也就是relaxation blood pressure (**舒张压**)，在中文语境，常被成为**低压**。心脏在舒张（relaxation）的时候，血液会回流到心脏，所以血管内的压力也就减弱了。
+来自古希腊的词根`dia`, 代表apart。所以`Diastolic`就是代表心脏apart做功的结果，也就是relaxation blood pressure (**舒张压**)，在中文语境，常被成为**低压**。心脏在舒张（relaxation）的时候，血液会回流到心脏，所以血管内的压力也就减弱了。健康的低压在**80 mm/Hg**以下。
 
 # Haemorrhagic Stroke
 
