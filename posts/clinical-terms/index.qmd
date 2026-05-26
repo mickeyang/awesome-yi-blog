@@ -1,0 +1,19 @@
+---
+title: "Clinical terms"
+description: "一些医学术语"
+author: "Awesome Yi"
+date: "2026-05-26"
+categories: [clinical]
+---
+
+# Systolic Blood Pressure (BP)
+
+来自古希腊的词根`syn`, 代表together。所以`Systolic`就是代表心脏together做功的结果，也就是contraction blood pressure (**收缩压**)，在中文语境，常被成为**高压**。心脏在收缩（contraction）的时候，会把血液一下子输送到身体的各个器官和末梢，所以血管内的压力会显著升高。
+
+# Diastolic Blood Pressure (BP)
+
+来自古希腊的词根`dia`, 代表apart。所以`Diastolic`就是代表心脏apart做功的结果，也就是relaxation blood pressure (**舒张压**)，在中文语境，常被成为**低压**。心脏在舒张（relaxation）的时候，血液会回流到心脏，所以血管内的压力也就减弱了。
+
+# Haemorrhagic Stroke
+
+是中风（stroke）的一种，但不是心脏stroke，而是大脑，即大脑的出血性中风，也称为脑溢血，会造成大脑的不可逆损伤。
