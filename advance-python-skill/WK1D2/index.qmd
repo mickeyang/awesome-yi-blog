@@ -1,6 +1,6 @@
 ---
 title: "Week One Day Two (W1D2)"
-description: "Testing"
+description: "Manipulate multiple `generators`"
 author: "Awesome Yi"
 date: "2026-05-26"
 categories: [Week1]
