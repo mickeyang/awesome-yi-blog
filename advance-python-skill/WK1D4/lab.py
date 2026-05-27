@@ -13,6 +13,7 @@ class ManageTempFile:
         if exc_type:
             print(f"-> Logged error: {exc_val}")
         return False
+
 try:
     with ManageTempFile("testing_file.csv") as temp_file:
         print(f"Reading data from the {temp_file} file...")

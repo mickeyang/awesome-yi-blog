@@ -72,3 +72,9 @@ except ValueError as e:
 
 ```
 
+The most common usage of the 'with' statement is `with open() as f`.
+
+# References
+
+- [Python 中 with 用法详解
+](https://blog.csdn.net/freeking101/article/details/109615618)
