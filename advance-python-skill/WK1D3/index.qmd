@@ -1,5 +1,5 @@
 ---
-title: "Week One Day Two (W1D3)"
+title: "Week One Day Three (W1D3)"
 description: "Mastering `collections`"
 author: "Awesome Yi"
 date: "2026-05-26"
