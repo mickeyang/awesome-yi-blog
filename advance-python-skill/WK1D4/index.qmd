@@ -1,0 +1,74 @@
+---
+title: "Week One Day Four (W1D4)"
+description: "Resource Management and Custom Context Managers by using `with`"
+author: "Awesome Yi"
+date: "2026-05-27"
+categories: [Week1]
+---
+
+# Why important?
+
+When running data pipelines, your code constantly interacts with external environments—opening files, initiating database connections, spinning up SSH tunnels, or downloading large payloads to local disk space. If your pipeline crashes mid-execution and leaves these connections or files open, you get resource leaks. This can block future runs, lock database tables, or exhaust your storage.
+
+The beauty of the `with` statement is that it defines a strict runtime context. It sets up a resource before code runs, and tears it down immediately afterward.
+
+# How?
+
+```
+import time
+
+class PipelineTimer:
+    def __enter__(self):
+        self.start_time = time.time()
+        # Whatever we return here is what the 'as' variable captures
+        return self 
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.end_time = time.time()
+        duration = self.end_time - self.start_time
+        print(f"[TIMER] Pipeline step completed in {duration:.4f} seconds.")
+        
+        # If an exception happened inside the 'with' block:
+        # Returning False allows the error to propagate (crash cleanly).
+        # Returning True would swallow the error (usually dangerous!).
+        return False
+
+# Activating our custom context manager
+with PipelineTimer() as timer:
+    print("Extracting heavy dataset...")
+    time.sleep(1.5)  # Simulating a heavy data load
+    print("Extraction done.")
+
+# Output:
+# Extracting heavy dataset...
+# Extraction done.
+# [TIMER] Pipeline step completed in 1.5012 seconds.
+```
+
+# Lab session
+
+```
+class ManageTempFile:
+    def __init__(self, filename):
+        self.file_name = filename
+        return None
+
+    def __enter__(self):
+        print(f"Creating temp file: {self.file_name}")
+        return self.file_name
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print(f"Safely removing temp file: {self.file_name}")
+
+        if exc_type:
+            print(f"-> Logged error: {exc_val}")
+        return False
+try:
+    with ManageTempFile("testing_file.csv") as temp_file:
+        print(f"Reading data from the {temp_file} file...")
+        raise ValueError("Database connection lost during file processing!")
+except ValueError as e:
+    print(f"Main script caught the error: {e}")
+
+```
+
