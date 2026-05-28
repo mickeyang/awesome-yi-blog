@@ -11,7 +11,9 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Advance Python"
-        href: python-series.qmd
+        href: python-series.qmd      
+      - text: "AI"
+        href: ai.qmd
       - text: "About Me"
         href: about.qmd
     right:

@@ -1,0 +1,17 @@
+---
+title: "Artificial Intelligence (AI)"
+# subtitle: "The world in my eyes."
+listing:
+  contents: AI
+  feed: true
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  exclude:
+    author: "draft*"
+page-layout: full
+title-block-banner: true
+---
+
