@@ -3,7 +3,7 @@ title: "Google APP Script"
 description: "Automate your personal script on the Cloud."
 author: "Awesome Yi"
 date: "2026-05-28"
-# categories: []
+categories: [diary]
 image: cover.jpg
 ---
 
