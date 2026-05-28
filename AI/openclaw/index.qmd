@@ -3,7 +3,7 @@ title: "OPENCLAW 数字员工"
 description: "Set up my first A.I. assistant"
 author: "Awesome Yi"
 date: "2026-05-20"
-categories: [A.I.]
+categories: [agent]
 image: openclaw.png
 ---
 
