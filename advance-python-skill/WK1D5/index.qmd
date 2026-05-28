@@ -1,0 +1,82 @@
+---
+title: "Week One Day Five (W1D5)"
+description: "`iterators` protocol"
+author: "Awesome Yi"
+date: "2026-05-28"
+categories: [Week1]
+---
+
+# Iterables vs. Iterators
+
+In Python, there is a strict technical difference between an **Iterable** and an **Iterator**. As a data engineer, knowing this distinction helps you control exactly how and when data streams are loaded.
+
+1.  **Iterable:** An object that can return its elements one by one. It contains data **but doesn't know its own current position in a loop**. Examples include lists, tuples, and dictionaries.
+
+2.  **Iterator:** The actual stateful stream object. It **knows exactly where it currently** is in the dataset and fetches the next item only when `next()` is called on it.
+
+When you pass an Iterable (like a list) into a `for` loop, Python secretly calls the built-in `iter()` function on it to **turn it into an Iterator**. Then, it repeatedly calls `next()` on that iterator until the data runs out and a `StopIteration` exception is raised.
+
+## A Database Batch Fetcher
+
+```
+class DatabaseBatchFetcher:
+    def __init__(self, total_rows, batch_size):
+        self.total_rows = total_rows
+        self.batch_size = batch_size
+        self.current_row = 0
+
+    def __iter__(self):
+        return self  # An iterator must always return itself here
+
+    def __next__(self):
+        # If we've processed all rows, signal the loop to stop cleanly
+        if self.current_row >= self.total_rows:
+            raise StopIteration
+            
+        # Determine the boundaries of the next batch
+        start = self.current_row
+        end = min(start + self.batch_size, self.total_rows)
+        
+        # Simulate fetching a chunk from a database
+        batch_data = [f"Row_{i}" for i in range(start, end)]
+        
+        # Advance the internal pointer state for the next call
+        self.current_row = end
+        
+        return batch_data
+```
+
+# Lab session
+
+```
+# MY SOLUTION
+
+class CumulativeSumStream:
+    def __init__(self, data_stream):
+        self.data_stream = iter(data_stream) # turn an object into an iterator so that I do not need to use len() function to determine boundary, also no need to know current_position (index)
+        self.running_total = 0
+        # self.length = len(data_stream)
+        # self.current_position = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        next_value = next(self.data_stream)
+        self.running_total += next_value
+        
+        # if self.current_position >= self.length:
+        #     raise StopIteration  # the next() function automatically raise StopIteration
+
+        # self.running_total += self.data_stream[self.current_position]
+        # self.current_position += 1
+
+        return self.running_total
+
+mock_payloads = [10, 20, 5, 15]
+
+sum_stream = CumulativeSumStream(mock_payloads)
+
+for m in sum_stream:
+    print(m)
+```
