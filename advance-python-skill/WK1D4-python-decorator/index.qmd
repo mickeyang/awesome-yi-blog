@@ -2,8 +2,8 @@
 title: "Python Decorator"
 description: "Explain Python decorator and its usage."
 author: "Awesome Yi"
-date: "2026-05-24"
-categories: [Python]
+date: "2026-05-28"
+categories: [Week1]
 image: python-decorator.png
 ---
 
