@@ -1,0 +1,21 @@
+---
+title: "Buddism"
+subtitle: "Buddha widsom."
+listing:
+  contents: buddism
+  feed: true
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  exclude:
+    author: "draft*"
+page-layout: full
+title-block-banner: true
+---
+
+佛教智慧，大多数内容来源自上海大学成庆老师的《人生解忧：佛教入门40讲》这本书。
+
+---
+

@@ -14,6 +14,8 @@ website:
         href: python-series.qmd      
       - text: "AI"
         href: ai.qmd
+      - text: "Buddism"
+        href: buddism.qmd
       - text: "About Me"
         href: about.qmd
     right:
