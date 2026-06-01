@@ -1,12 +1,12 @@
 ---
 title: "Week Two Day One (W2D1)"
-description: "Defensive Data Engineering."
+description: "Defensive Data Engineering using `isinstance()` and `dict.get()`."
 author: "Awesome Yi"
 date: "2026-06-01"
 categories: [Week2]
 ---
 
-Defensive Data Engineering means building firewalls at the gates of ELT pipelines.
+> Defensive Data Engineering means building firewalls at the gates of ELT pipelines.
 
 ---
 
