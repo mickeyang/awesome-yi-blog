@@ -76,3 +76,6 @@ Some English and Chinese vocabulary
 - prudent (careful and avoiding risks)
 
 - attestation (evidence or proof of something; the action of formally witnessing or certifying something)
+
+- payload (in computing and telecommunications, the payload is the part of the data that carries the intended message or content. Headers and metadata are considered overhead because they provide routing and control information, not the actual data)
+
