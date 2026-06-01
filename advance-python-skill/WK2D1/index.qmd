@@ -1,0 +1,94 @@
+---
+title: "Week Two Day One (W2D1)"
+description: "Defensive Data Engineering."
+author: "Awesome Yi"
+date: "2026-06-01"
+categories: [Week2]
+---
+
+Defensive Data Engineering means building firewalls at the gates of ELT pipelines.
+
+---
+
+# Python type-hinting
+
+- Optional or Alternative Syntax
+
+```
+def parse_email(email: str | None) -> str:
+    function body
+```
+
+- Literal
+
+Literal limits value options.
+
+```
+def export_dataset(data: list, file_format: Literal["csv", "parquet", "json"]):
+    print(f"Exporting as {file_format}")
+```
+
+- Any / Mapping
+
+dict[str, int]
+
+Mapping[str, Any]
+
+# Example
+
+```
+#  THE UNPROTECTED WAY
+def ingest_api_response(payload):
+    # What is payload? A list? A dict? A string? 
+    # If it's None, this line crashes instantly with an AttributeError
+    for record in payload["data"]:
+        print(record)
+
+#  THE DEFENSIVE WAY
+from typing import Any
+
+def ingest_api_response_secure(payload: dict[str, list[dict[str, Any]]] | None) -> None:
+    if payload is None:
+        print("Warning: Payload is empty. Skipping.")
+        return
+        
+    # The IDE and linters now know exactly what 'payload' contains
+    for record in payload.get("data", []):
+        print(record)
+```
+
+# Lab session
+
+```
+# MY SOLUTION
+
+from typing import Any
+
+# TESTING DATA
+valid_config = {"db_name": "analytics_db", "retry_count": 3, "environment": "PROD"}
+invalid_config = {"db_name": "analytics_db", "retry_count": "three", "environment": "STAGE"}
+
+def initialise_pipeline(config: dict[str, Any]) -> str:
+    # 1. Check db_name safely using .get()
+    db_name = config.get("db_name")
+    if not isinstance(db_name, str):
+        raise TypeError(f"Config 'db_name' must be a string. Got: {type(db_name).__name__}")
+        
+    # 2. Check retry_count (Added missing requirement)
+    retry_count = config.get("retry_count")
+    if not isinstance(retry_count, int):
+        raise TypeError(f"Config 'retry_count' must be an integer. Got: {type(retry_count).__name__}")
+        
+    # 3. Check environment using single quotes inside the f-string
+    environment = config.get("environment")
+    if environment not in ["PROD", "DEV"]:
+        raise ValueError(f"Config 'environment' must be 'PROD' or 'DEV'. Got: {environment}")
+        
+    # Alternating quotes prevents the SyntaxError
+    return f"Connected to {db_name} in {environment} with {retry_count} retries."
+
+try:
+    initialise_pipeline(invalid_config)
+except (TypeError, ValueError) as e:
+    print(f"Pipeline safely blocked! Error: {e}")
+```
