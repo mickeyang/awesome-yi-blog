@@ -21,18 +21,15 @@ def parse_email(email: str | None) -> str:
 
 - Literal
 
-Literal limits value options.
-
 ```
+# Literal limits value options.
 def export_dataset(data: list, file_format: Literal["csv", "parquet", "json"]):
     print(f"Exporting as {file_format}")
 ```
 
 - Any / Mapping
 
-dict[str, int]
-
-Mapping[str, Any]
+In Python, both `dict[str, int]` and `Mapping[str, Any]` are used for type hinting. They tell developers (and tools like IDEs or linters) what kind of data to expect inside a dictionary-like structure. Specifically, `dict[str, int]` specifies a specific, concrete Python dictionary where every key must be a string (str) and every value must be an integer (int). Whereas, `Mapping[str, Any]` comes from Python's collections.abc module. It is an abstract base class (interface). It means "anything that behaves like a read-only dictionary."
 
 # Example
 
