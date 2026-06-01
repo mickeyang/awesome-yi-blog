@@ -1,0 +1,76 @@
+---
+title: "Week Two Day Two (W2D2)"
+description: "Using `Pydantic`."
+author: "Awesome Yi"
+date: "2026-06-01"
+categories: [Week2]
+---
+
+> Pydantic is not only a validation library, but also a parsing library.
+
+---
+
+# Example
+
+```
+from datetime import datetime
+from pydantic import BaseModel, ValidationError
+
+# 1. Define the Firewall Schema
+class UserModel(BaseModel):
+    user_id: int
+    username: str
+    signup_date: datetime  # Pydantic will automatically parse ISO strings into datetime objects
+    is_active: bool
+
+# 2. Simulate raw, messy data from an API
+raw_api_payload = {
+    "user_id": "1001",                 # Str instead of Int (Pydantic will coerce this!)
+    "username": "data_wizard",
+    "signup_date": "2026-06-01T12:00:00", # String date (Pydantic will parse this!)
+    "is_active": "True"               # Str instead of Bool (Pydantic will coerce this!)
+}
+
+# 3. Pass data through the firewall
+try:
+    user = UserModel(**raw_api_payload)
+    print(f"Successfully parsed user: {user.user_id}")
+    print(type(user.signup_date)) # Output: <class 'datetime.datetime'>
+except ValidationError as e:
+    print(f"Schema violation! Details: {e.json()}")
+```
+
+# Lab session
+
+```
+from typing import Literal
+from pydantic import BaseModel, ValidationError
+
+# Testing data
+mock_orders = [
+    {"order_id": 101, "price": "29.99", "item_name": "Logitech Mouse", "status": "PENDING"},
+    {"order_id": 102, "price": 1099.00, "item_name": "4K Monitor", "status": "INVALID_STATUS"},
+    {"order_id": "one-hundred-three", "price": 5.50, "item_name": "HDMI Cable", "status": "SHIPPED"}
+]
+
+# 1. Define the Firewall Schema, THIS IS THE CORE CONFIG
+class OrderModel(BaseModel):
+    order_id: int
+    price: float
+    item_name: str
+    status: Literal["PENDING", "SHIPPED", "DELIVERED"]
+
+
+# 2. Pass data through the firewall
+for o in mock_orders:
+    print(o)
+    try:
+        order = OrderModel(**o)    
+        print(f"Order {order.order_id} is clean.")
+    except ValidationError as e:
+        # Loop through the structured errors Pydantic provides
+        for error in e.errors():
+            field = " -> ".join(str(loc) for loc in error["loc"])
+            error_msg = error["msg"]
+            print(f"   • Field [{field}]: {error_msg}")
+```
