@@ -1,0 +1,6 @@
+2026-06-02 20:58:12,323 [WARNING] Empty data received! Skipping batch.
+2026-06-02 20:58:12,326 [ERROR] Batch 3 failed during execution.
+Traceback (most recent call last):
+  File "C:\data-science\my-blog\advance-python-skill\WK2D3\lab.py", line 32, in process_batch
+    raise ValueError("Corrupt record detected!")
+ValueError: Corrupt record detected!
