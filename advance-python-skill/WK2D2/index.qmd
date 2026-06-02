@@ -1,6 +1,6 @@
 ---
 title: "Week Two Day Two (W2D2)"
-description: "Using `Pydantic`."
+description: "Using `Pydantic` to validate and parse data respecting desired data schema."
 author: "Awesome Yi"
 date: "2026-06-01"
 categories: [Week2]
