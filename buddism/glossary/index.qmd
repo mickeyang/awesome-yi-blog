@@ -1,0 +1,20 @@
+---
+title: "Glossary"
+description: "一些概念"
+author: "Awesome Yi"
+date: "2026-06-03, 13:30"
+# categories: []
+# image: cover.jpg
+---
+
+- 缚悉底 （放牛童）
+
+- 净饭王
+
+- 悉达多
+
+- 善生
+
+- 毕钵罗
+
+- 吠陀（知识）
