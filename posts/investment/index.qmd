@@ -1,0 +1,21 @@
+---
+title: "Index Fund"
+description: ""
+author: "Awesome Yi"
+date: "2026-06-03"
+categories: [investment]
+# image: cover.jpg
+---
+
+# 在中国可以购买到的指数基金
+
+- 港股科技 (016495)
+
+- 中证红利低波 (021707)
+
+- 恒生红利低波 (019260)
+
+- 中证A50 (021212)
+
+- 优选300 023711)
+
