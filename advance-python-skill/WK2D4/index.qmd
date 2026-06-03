@@ -1,0 +1,65 @@
+---
+title: "Week Two Day Four (W2D4)"
+description: "Exponential Backoff - double the wait duration after every failure"
+author: "Awesome Yi"
+date: "2026-06-03"
+categories: [Week2]
+---
+
+> Resolve self-healing errors
+
+---
+
+# Two types pipeline errors
+- Permanent Errors
+- Transient Errors
+
+# Lab session
+
+```
+import random
+import logging
+import time
+
+logger = logging.getLogger("try_multiple_attempts")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
+
+def mock_database_insert(payload):
+    rand_val = random.random()
+    if rand_val < 0.2:
+        raise PermissionError("FATAL: Invalid database credentials provided.")
+    elif rand_val < 0.8:
+        raise TimeoutError("Transient: Database lock timeout exceeded.")
+    # print("Database insert successful!")
+    return True
+
+def load_to_warehouse_safely(payload, max_attempt=4, base_delay=2):
+    for a in range(1, max_attempt+1):
+        try:
+            logger.info(f"Attempt {a}/{max_attempt}: Inserting data...")
+            mock_database_insert(payload)
+            logger.info("Database insert successful! Exiting loop.")
+            return True
+        
+        except TimeoutError as e:
+            if(a == max_attempt):
+                logger.critical(f"Max retries ({max_attempt}) exhausted. Database load failed.")
+                raise e
+            waiting_time = (base_delay ** a) + random.uniform(0, 1)
+            logger.warning(f"Transient error detected: {e} Try again, waiting for {waiting_time:.2f} seconds...")
+            time.sleep(waiting_time)
+
+        except PermissionError as e:
+            logger.critical(f"Permission error detected: {e} Stop the process directly...")
+            raise e
+
+try:
+    load_to_warehouse_safely("abc")
+except Exception as main_err:
+    print(f"\n[MAIN PIPELINE MONITOR] Job failed completely due to: {type(main_err).__name__}")
+```
+
