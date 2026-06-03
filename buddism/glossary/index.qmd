@@ -2,7 +2,7 @@
 title: "Glossary"
 description: "一些概念"
 author: "Awesome Yi"
-date: "2026-06-03, 13:30"
+date: "2026-06-03"
 # categories: []
 # image: cover.jpg
 ---
