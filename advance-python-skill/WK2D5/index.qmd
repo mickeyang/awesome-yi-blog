@@ -1,0 +1,17 @@
+---
+title: "Week Two Day Five (W2D5)"
+description: "using `assert` statement for unit test"
+author: "Awesome Yi"
+date: "2026-06-04"
+categories: [Week2]
+---
+
+# Automated testing
+
+In data engineering, unit tests ensure that your transformation logic handles edge cases—like missing fields, negative values, or unexpected nulls—without corrupting the final dataset before it hits production.
+
+# How - using `assert` statement
+
+We write unit tests using **mock data**. Instead of running your pipeline against a live database, you feed your transformation functions a small, manually crafted "fake" dataset where you already know exactly what the output *should* look like. If your function computes the wrong values or crashes on the fake data, you catch the bug locally before deploying it.
+
+An `assert` expression evaluates a condition. If the condition is `True`, the code moves on silently. If it is `False`, Python immediately throws an `AssertionError` and stops the line.
