@@ -16,11 +16,11 @@ In Python, there are two mechanisms for fast data processing, **Concurrency** an
 
 ## Concurrency (I/O-Bound Tasks)
 
-This is about dealing with many things at once. a chess grandmaster playing 20 people simultaneously.
+Using `ThreadPoolExecutor`. This is about dealing with many things at once. a chess grandmaster playing 20 people simultaneously.
 
 ## Parallelism (CPU-Bound Tasks)
 
-This is about doing many things at once (Multiprocessing). Imagine 20 different grandmasters playing 20 different games simultaneously.
+Using `ProcessPoolExecutor`. This is about doing many things at once (Multiprocessing). Imagine 20 different grandmasters playing 20 different games simultaneously.
 
 # Lab session
 
