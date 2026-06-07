@@ -10,6 +10,44 @@ categories: [Week2]
 
 ---
 
+# What is Pydantic BaseModel
+
+在Pydantic库中，BaseModel是所有数据模型的基类。在使用时，需要从Pydantic库中引用。在Pydantic V2中，推荐使用`@field_validator`。
+
+By default, 在使用BaseModel构建新的class（类）的时候，class中的字段名需要和payload数据中的字段名一致。但也可以在定义class的过程中使用alias去映射payload中不同得字段名称。另外，在class中建议使用更清晰的命名方式，而payload中可以使用稍微简洁的命名。
+
+```
+from pydantic import BaseModel, Field
+
+class UserModel(BaseModel):
+    user_id : int = Field(..., alias = "id")  # using alias would PASS both "user_id" and "id" columns
+    age : int
+    MIN_AGE = 18
+
+    model_config = {"extra": "allow"}  # allow more columns/fields in payload but NOT in the class definition, other options include "forbid" and "ignore"
+
+    
+    @field_validator("age")  # field validation
+    def check_age(cls, v):  # cls here refers to the UserModel class itself, like self
+        if v < 0:
+            raise ValueError("Age cannot be a negative value.")
+        if v < cls.MIN_AGE:
+            raise ValueError(f"Age must be at least {cls.MIN_AGE}")
+
+        return v
+
+user = UserModel(user_id = "1", age = 20)  # character "1" will be automatically converted to integer 1
+```
+
+## Functions
+
+```
+user.model_dump()  # dump to a dictionary
+user.model_dump_json()  # dump to a JSON
+user.model_copy()
+user.model_fields()
+```
+
 # Example
 
 ```
@@ -33,7 +71,7 @@ raw_api_payload = {
 
 # 3. Pass data through the firewall
 try:
-    user = UserModel(**raw_api_payload)
+    user = UserModel(**raw_api_payload)  # `**` is used to UNPACK payload dictionary
     print(f"Successfully parsed user: {user.user_id}")
     print(type(user.signup_date)) # Output: <class 'datetime.datetime'>
 except ValidationError as e:
@@ -74,3 +112,26 @@ for o in mock_orders:
             error_msg = error["msg"]
             print(f"   • Field [{field}]: {error_msg}")
 ```
+
+# Furthermove
+
+在传入payload时，`**`的作用是`字典解包`(dictionary unpacking)，它会把一个**字典**(dict)拆解成关键字参数(keyword arguments)。这是常用的初始化一个Pydantic class方法，同时还有其它两种方式可以初始化，如下:
+
+- UserModel(**payload) 常用的方式，适用于dict和JSON
+
+- UserModel(id=1, name="Alice")
+
+- UserModel.model_validate(payload) 这是最Pydantic v2 最推荐的
+
+## 推荐使用`model_validate(payload)`
+在Pydantic V2中，能用`UserModel.model_validate(payload)`的，就不要使用`UserModel(**payload)`。使用`model_validate(payload)`的好处包括，但不限于:
+
+- 原生支持alias
+
+- 支持严格模式 (不自动将字符"123"转为123, 需要配置`model_config = ConfigDict(strict=True)`)
+
+- 错误信息更清晰
+
+- 未来兼容性更好
+
+- 可以兼容payload中多余的字段，比如使用`extra="ignore"`
