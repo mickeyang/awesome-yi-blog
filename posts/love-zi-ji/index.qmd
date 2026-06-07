@@ -1,6 +1,6 @@
 ---
 title: "爱自己的100种方式"
-description: "书摘"
+description: "开开心心过，幸幸福福过"
 author: "Awesome Yi"
 date: "2026-05-31"
 categories: [书摘]
