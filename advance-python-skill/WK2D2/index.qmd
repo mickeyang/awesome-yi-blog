@@ -6,15 +6,17 @@ date: "2026-06-01"
 categories: [Week2]
 ---
 
-> Pydantic is not only a validation library, but also a parsing library.
+> **Pydantic** is not only a validation library, but also a **parsing library**. 
+
+> 在Pydantic V2中，推荐使用`@field_validator` and `model_validate(payload)`。
 
 ---
 
 # What is Pydantic BaseModel
 
-在Pydantic库中，BaseModel是所有数据模型的基类。在使用时，需要从Pydantic库中引用。在Pydantic V2中，推荐使用`@field_validator`。
+在Pydantic库中，BaseModel是所有数据模型的基类。在使用时，需要从Pydantic库中引用。
 
-By default, 在使用BaseModel构建新的class（类）的时候，class中的字段名需要和payload数据中的字段名一致。但也可以在定义class的过程中使用alias去映射payload中不同得字段名称。另外，在class中建议使用更清晰的命名方式，而payload中可以使用稍微简洁的命名。
+By default, 在使用BaseModel构建新的class（类）的时候，class中的字段名需要和payload数据中的字段名一致。但也可以在定义class的过程中使用alias去(map)映射payload中不同的字段名称从而避免报错`ValidationError`。另外，在class中建议使用更清晰的命名，而payload中可以使用稍微简洁的命名（比如user_id vs. id）。
 
 ```
 from pydantic import BaseModel, Field
@@ -113,9 +115,9 @@ for o in mock_orders:
             print(f"   • Field [{field}]: {error_msg}")
 ```
 
-# Furthermove
+# Furthermore
 
-在传入payload时，`**`的作用是`字典解包`(dictionary unpacking)，它会把一个**字典**(dict)拆解成关键字参数(keyword arguments)。这是常用的初始化一个Pydantic class方法，同时还有其它两种方式可以初始化，如下:
+在传入payload时，`**`的作用是`字典解包`(dictionary unpacking)，它会把一个**字典**(dict)拆解成关键字参数(keyword arguments)。这是常用的初始化Pydantic class的方法，同时还有其它两种方式可以初始化，如下:
 
 - UserModel(**payload) 常用的方式，适用于dict和JSON
 
