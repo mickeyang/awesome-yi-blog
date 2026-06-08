@@ -14,15 +14,25 @@ locks keep our data safe but introduce a major downside: they slow things down b
 
 # How: Producer-Consumer Architecture
 
-Producers: Their sole job is to harvest data as fast as possible from a source (like scraping endpoints) and drop it into a holding area.
+## Producers
 
-Consumers: Their sole job is to grab data out of that holding area, transform it, and load it into its final destination.
+Their sole job is to harvest data as fast as possible from a source (like scraping endpoints) and drop it into a holding area.
+
+## Consumers
+
+Their sole job is to grab data out of that holding area, transform it, and load it into its final destination.
+
+The `Consumer` function uses a `while` loop, which is constantly waiting for new items and should be terminated when no data can `get` from a `queue`, then use `break` to jump out the loop. Besides, when all items are consumed, we will have to tell the queue the task is done by calling `queue.task_done()`.
+
+For every item retrieved with `queue.get()`, we must call `queue.task_done()` when we are finished processing it. This tells the queue that the task is complete.
 
 The holding area in the middle is a **Queue**.
 
 # Queue
 
-When using a `Queue`, the module has internal locking mechanisms built right into its core, hence no need to use `with data_lock`.
+- A queue is a data structure that follows a "First-In, First-Out" (FIFO) principle. The first item you add is the first one to be removed.
+
+- When using a `Queue`, the module has internal locking mechanisms built right into its core, hence no need to use `with data_lock`.
 
 ## Methods
 
