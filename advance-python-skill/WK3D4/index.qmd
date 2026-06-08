@@ -1,0 +1,33 @@
+---
+title: "Week Three Day Four (W3D4)"
+description: "Thread-Safe Queue `queue.Queue`"
+author: "Awesome Yi"
+date: "2026-06-08"
+categories: [Week3]
+---
+
+# Why necessary
+
+locks keep our data safe but introduce a major downside: they slow things down by forcing threads into a single-file line. If your threads spend all their time waiting in line to touch a shared asset, your concurrency benefits vanish.
+
+---
+
+# How: Producer-Consumer Architecture
+
+Producers: Their sole job is to harvest data as fast as possible from a source (like scraping endpoints) and drop it into a holding area.
+
+Consumers: Their sole job is to grab data out of that holding area, transform it, and load it into its final destination.
+
+The holding area in the middle is a **Queue**.
+
+# Queue
+
+When using a `Queue`, the module has internal locking mechanisms built right into its core, hence no need to use `with data_lock`.
+
+## Methods
+
+- q.put(), put to the BACK of a queue
+
+- q.get(), get from the FRONT of a queue
+
+- q.task_done()
