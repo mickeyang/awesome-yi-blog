@@ -28,7 +28,7 @@ def data_consumer(worker_id: int):
         time.sleep(0.4) # Simulates write latency
         data_queue.task_done()
 
-if __name__ == "__main__":
+if __name__ == "__main__": # This is where the script orchestrates the producer and consumers
     # Start the Producer Thread
     producer_thread = threading.Thread(target=raw_data_producer)
     producer_thread.start()
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     data_queue.join()
     
     # Stop the consumers by feeding them sentinel values (None)
-    for _ in range(2):
+    for _ in range(2): # The underscore symbol "_" is a conventional "throwaway" name for a loop variable you don't need
         data_queue.put(None)
         
     for t in consumer_threads:
