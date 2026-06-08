@@ -3,3 +3,4 @@
 post-template.txt
 **/*.quarto_ipynb
 posts/example/
+chat.json
