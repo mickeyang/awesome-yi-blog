@@ -63,7 +63,7 @@ with ThreadPoolExecutor(max_workers=5) as executor:
     for i in iterators:
         print(i)
 end_time = time.time()
-print(f"The whole process took {end_time - start_time:.2f} seconds") # 8 seconds
+print(f"The whole process took {end_time - start_time:.2f} seconds") # 4 seconds
 print(f"The target url list is: {target_urls}")
 
 # WITH CONCURRENCY executor + futures, this approach does not need to follow the target_urls order
@@ -77,6 +77,6 @@ for future in as_completed(futures):
     result = future.result()
     print(result)
 end_time = time.time()
-print(f"The whole process took {end_time - start_time:.2f} seconds") # 8 seconds
+print(f"The whole process took {end_time - start_time:.2f} seconds") # 4 seconds
 print(f"The target url list is: {target_urls}")
 ```
