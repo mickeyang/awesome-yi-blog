@@ -18,9 +18,17 @@ In Python, there are two mechanisms for fast data processing, **Concurrency** an
 
 Using `ThreadPoolExecutor`. This is about dealing with many things at once. a chess grandmaster playing 20 people simultaneously.
 
+:::{.callout-note}
+并发，依次进行，任务之间有切换和协作。
+:::
+
 ## Parallelism (CPU-Bound Tasks)
 
 Using `ProcessPoolExecutor`. This is about doing many things at once (Multiprocessing). Imagine 20 different grandmasters playing 20 different games simultaneously.
+
+:::{.callout-note}
+并行，依赖多核或者多处理器。
+:::
 
 # Lab session
 
@@ -32,17 +40,43 @@ target_urls = ["api/v1/users", "api/v1/orders", "api/v1/products", "api/v1/metri
 
 def simulate_download(url: str) -> str:
     # Simulates waiting 1 second for a server network response
+    if(url == "api/v1/orders"):
+        time.sleep(1.5)
     time.sleep(1)
     return f"Successfully downloaded data from {url}"
 
+# WITHOUT CONCURRENCY
+start_time = time.time()
+for t in target_urls:
+    simulate_download(t)
+end_time = time.time()
+print(f"The whole process took {end_time - start_time:.2f} seconds") # 8 seconds
+
+# YOUR WORK HERE: 
+# Implement the ThreadPoolExecutor to run simulate_download on all target_urls concurrently.
+# Print the results as they finish.
+
+# WITH CONCURRENCY executor, this approach must follow the target_urls order
+start_time = time.time()
+with ThreadPoolExecutor(max_workers=5) as executor:
+    iterators = executor.map(simulate_download, target_urls)
+    for i in iterators:
+        print(i)
+end_time = time.time()
+print(f"The whole process took {end_time - start_time:.2f} seconds") # 8 seconds
+print(f"The target url list is: {target_urls}")
+
+# WITH CONCURRENCY executor + futures, this approach does not need to follow the target_urls order
+# once finish, then print out result
+start_time = time.time()
 with ThreadPoolExecutor(max_workers=5) as executor:
     # Submit returns a dictionary of Future objects
     futures = {executor.submit(simulate_download, url): url for url in target_urls}
-    
-    # as_completed yields them dynamically as they cross the finish line
-    # If the first URL stalls, your loop will still print out records 2, 3, 4, and 5 first, 
-    # allowing you to process data in real-time without blocking the pipeline.
-    for future in as_completed(futures):
-        result = future.result()
-        print(result)
+# as_completed yields them dynamically as they cross the finish line
+for future in as_completed(futures):
+    result = future.result()
+    print(result)
+end_time = time.time()
+print(f"The whole process took {end_time - start_time:.2f} seconds") # 8 seconds
+print(f"The target url list is: {target_urls}")
 ```
