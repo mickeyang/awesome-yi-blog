@@ -8,10 +8,16 @@ categories: [Week3]
 
 > Using `ProcessPoolExecutor` the technique, Python requests an entirely **new instance** of the Python **interpreter** from your Operating System.
 
-Processes have absolute memory isolation. Each process gets its own dedicated CPU core and its own private copy of the script's memory. Because they do not share memory, the GIL is completely bypassed!
+Processes have **absolute memory isolation**. Each process gets its own dedicated CPU core and its own private copy of the script's memory. Because they do not share memory, the GIL is completely bypassed!
+
+# Serialisation & De-Serialisation
+
+This is also called Pickling in Python. It translates your Python objects into raw bytes, ships those bytes over to the new process, and deserializes (**unpickles**) them back into Python objects.
 
 ::: {.callout-tip}
-If the time it takes to serialize and copy your dataset to a new process is longer than the time it takes to do the math sequentially, multiprocessing will actually make your pipeline slower. Only use multiprocessing for heavy CPU calculations!
+If the time it takes to serialize and copy your dataset to a new process is longer than the time it takes to do the math sequentially, multiprocessing will actually make your pipeline slower. **Only use multiprocessing for heavy CPU calculations!**
+
+When using multiprocessing, you **must** shield your execution block with `if __name__ == "__main__":`. If you omit this, your worker processes will attempt to clone and re-run the entire script from top to bottom when spawning, triggering an infinite loop that will crash your computer.
 :::
 
 # Lab session
@@ -19,6 +25,7 @@ If the time it takes to serialize and copy your dataset to a new process is long
 ```
 import time
 from concurrent.futures import ProcessPoolExecutor
+import random
 
 # Mock data chunks representing massive rows of text data
 data_chunks = [
@@ -41,29 +48,28 @@ def brutal_cpu_math(chunk: str) -> int:
     counter = 0
     # Forcing the CPU to calculate heavy math over and over
     for i in range(5_000_000):
-        counter += (i * 2) // 3
+        counter += (i ** 2) // 3 * random.random()
     return counter
 
 # YOUR WORK HERE:
 # Implement the ProcessPoolExecutor block inside the proper entry guard.
 # Print the results of the parsed character counts.
-
 if __name__ == "__main__":
     start_time = time.time()
     with ProcessPoolExecutor() as executor:
         # results = executor.map(CPU_intensive_parse, data_chunks)
         results = executor.map(brutal_cpu_math, data_chunks)
-    for r in results:
-        print(f"There are {r} occurrences.")
+    # for r in results:
+    #     print(f"There are {r} occurrences.")
     end_time = time.time()
-    print(f"The whole process took {end_time - start_time:.2f} seconds")
+    print(f"[WITH ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds") # 3.42 seconds
 
 # WHAT-IF without the ProcessPoolExecutor()
 # start_time = time.time()
 # for d in data_chunks:
+#     brutal_cpu_math(d)
 #     # print(CPU_intensive_parse(d))
-#     print(brutal_cpu_math(d))
+#     # print(brutal_cpu_math(d))
 # end_time = time.time()
-# print(f"The whole process took {end_time - start_time:.2f} seconds")
+# print(f"[WITHOUT ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds") # 8.49 seconds
 ```
-
