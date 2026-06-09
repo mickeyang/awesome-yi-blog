@@ -29,15 +29,15 @@ def brutal_cpu_math(chunk: str) -> int:
 # YOUR WORK HERE:
 # Implement the ProcessPoolExecutor block inside the proper entry guard.
 # Print the results of the parsed character counts.
-# if __name__ == "__main__":
-#     start_time = time.time()
-#     with ProcessPoolExecutor() as executor:
-#         # results = executor.map(CPU_intensive_parse, data_chunks)
-#         results = executor.map(brutal_cpu_math, data_chunks)
-#     # for r in results:
-#     #     print(f"There are {r} occurrences.")
-#     end_time = time.time()
-#     print(f"[WITH ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds")
+if __name__ == "__main__":
+    start_time = time.time()
+    with ProcessPoolExecutor() as executor:
+        # results = executor.map(CPU_intensive_parse, data_chunks)
+        results = executor.map(brutal_cpu_math, data_chunks)
+    # for r in results:
+    #     print(f"There are {r} occurrences.")
+    end_time = time.time()
+    print(f"[WITH ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds") # 3.42 seconds
 
 # WHAT-IF without the ProcessPoolExecutor()
 # start_time = time.time()
@@ -46,4 +46,4 @@ def brutal_cpu_math(chunk: str) -> int:
 #     # print(CPU_intensive_parse(d))
 #     # print(brutal_cpu_math(d))
 # end_time = time.time()
-# print(f"[WITHOUT ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds")
+# print(f"[WITHOUT ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds") # 8.49 seconds
