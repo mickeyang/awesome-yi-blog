@@ -14,12 +14,6 @@ Processes have **absolute memory isolation**. Each process gets its own dedicate
 
 This is also called Pickling in Python. It translates your Python objects into raw bytes, ships those bytes over to the new process, and deserializes (**unpickles**) them back into Python objects.
 
-::: {.callout-tip}
-If the time it takes to serialize and copy your dataset to a new process is longer than the time it takes to do the math sequentially, multiprocessing will actually make your pipeline slower. **Only use multiprocessing for heavy CPU calculations!**
-
-When using multiprocessing, you **must** shield your execution block with `if __name__ == "__main__":`. If you omit this, your worker processes will attempt to clone and re-run the entire script from top to bottom when spawning, triggering an infinite loop that will crash your computer.
-:::
-
 # Lab session
 
 ```
@@ -73,3 +67,21 @@ if __name__ == "__main__":
 # end_time = time.time()
 # print(f"[WITHOUT ProcessPoolExecutor] - The whole process took {end_time - start_time:.2f} seconds") # 8.49 seconds
 ```
+
+# Furthermore
+
+::: {.callout-tip}
+If the time it takes to serialize and copy your dataset to a new process is longer than the time it takes to do the math sequentially, multiprocessing will actually make your pipeline slower. **Only use multiprocessing for heavy CPU calculations!**
+
+Small data or simple calculations -> keep it sequential. 
+
+Massive data, heavy regex parsing, encryption, or complex mathematical transformations -> using Multiprocessing.
+
+When using multiprocessing, you **must** shield your execution block with `if __name__ == "__main__":`. If you omit this, your worker processes will attempt to clone and re-run the entire script from top to bottom when spawning, triggering an infinite loop that will crash your computer.
+
+Multiprocessing is fundamentally designed to execute **via the command ine** from standalone scripts, such as `python multiprocess.py`.
+
+Multiprocessing only wins when the computational intensity of the function completely dwarfs the serialisation overhead.
+:::
+
+
