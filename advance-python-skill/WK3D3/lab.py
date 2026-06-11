@@ -12,20 +12,22 @@ def thread_safe_writer(thread_id: int) -> None:
     # YOUR WORK HERE: 
     # Secure this block with your lock so threads don't overwrite each other's file writes.
     with safe_locker:
-        with open(FILE_NAME, "a") as f:
+        with open(FILE_NAME, "a") as f: # a --> append
             f.write(message)
             time.sleep(0.01) # Simulates file disk latency
 
 if __name__ == "__main__":
     # Clear out previous logs if they exist
-    open(FILE_NAME, "w").close()
-    
+    # open(FILE_NAME, "w").close() # "w"写入模式，如果文件不存在则新建，存在则清空。常用来重置日志，初始化日志。
+    with open(FILE_NAME):
+        pass
+
     # Spin up 20 threads trying to write to the file simultaneously
     with ThreadPoolExecutor(max_workers=10) as executor:
         executor.map(thread_safe_writer, range(20))
         
     # Read and count the total written lines
-    with open(FILE_NAME, "r") as f:
+    with open(FILE_NAME, "r") as f: # "r" -> read
         lines = f.readlines()
         
     print(f"Total lines written successfully: {len(lines)}/20")

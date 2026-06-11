@@ -6,19 +6,30 @@ date: "2026-06-08"
 categories: [Week3]
 ---
 
-# Issue: Race Condition
+# Issue: Race Condition (竞态条件)
 
 A Race Condition happens when Thread A reads the counter (e.g., it sees 100), but before it can write the update, Thread B switches in, reads the same value (100), adds 1, and writes 101. Then Thread A wakes back up, finishes its math, and writes 101 over it.
 
-# Lock/Mutex
+::: {.callout-note}
+竞态条件需要满足三个条件：
+1. 并发
+2. 共享数据（多个执行单元读写同一个变量）
+3. 无正确同步
+:::
+
+# Lock/Mutex(互斥)
 A tool called a Lock (or a Mutex, which stands for Mutual Exclusion), which prevents data corruption when multiple workers write data into a shared database. Think of a Lock as a physical bathroom key at a coffee shop.
 
 ```
 Import threading
 data_lock = threading.Lock()
-with data_lock:
+with data_lock: # automatic release resource
 	do something here
 ```
 	
-# Tip
-Keep the code inside your with lock: blocks as short and fast as humanly possible. Move operations like string formatting (message = ...) outside the lock so threads can do that work concurrently, only acquiring the lock at the absolute last microsecond when touching the shared asset.
+::: {.callout-tip}
+- `with data_lock`强制将并发重新合并成一个单线程按照顺序运行的文件，从而削弱了并发的优势。因此 Keep the code inside your with lock: blocks as short and fast as humanly possible. Move operations like string formatting (message = ...) outside the lock so threads can do that work concurrently, only acquiring the lock at the absolute last microsecond when touching the shared asset.
+
+- 在Function之外申明一个全局的lock，所有的thread都使用用一个lock才能保证正确顺序。
+
+:::
