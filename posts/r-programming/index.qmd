@@ -1,0 +1,13 @@
+---
+title: "Learning by Doing"
+description: "R programming"
+author: "Awesome Yi"
+date: "2026-06-11"
+categories: [diary]
+image: cover.jpg
+---
+
+- Using `callr::rscript` to create a clean and empty runtime for a R script. This is especially useful when `source` an external R script/file within a running R session.
+
+- Using `here::here` for better file path management. This is especially useful if you want to share your project/code with others. It will save others time for setting up a working direcotory.
+
