@@ -12,13 +12,15 @@ locks keep our data safe but introduce a major downside: they slow things down b
 
 ---
 
-# How: Producer-Consumer Architecture
+# How: Producer-Consumer Architecture (经典并发设计模式)
 
-## Producers
+Decoupling a pipeine by using the producer-queue-consumer design，从而提高模块的独立性。可以通过调整producer和consumer的数量来平衡两者之间处理事务的速度差。
+
+## Producers (P) - `queue.put()`
 
 Their sole job is to harvest data as fast as possible from a source (like scraping endpoints) and drop it into a holding area.
 
-## Consumers
+## Consumers (C) - `queue.get()`
 
 Their sole job is to grab data out of that holding area, transform it, and load it into its final destination.
 
@@ -28,13 +30,13 @@ For every item retrieved with `queue.get()`, we must call `queue.task_done()` wh
 
 The holding area in the middle is a **Queue**.
 
-# Queue
+## Queue (Q)
 
 - A queue is a data structure that follows a "First-In, First-Out" (FIFO) principle. The first item you add is the first one to be removed.
 
 - When using a `Queue`, the module has internal locking mechanisms built right into its core, hence no need to use `with data_lock`.
 
-## Methods
+### Methods
 
 - q.put(), put to the BACK of a queue
 

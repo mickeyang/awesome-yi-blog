@@ -34,6 +34,14 @@ if __name__ == "__main__":
     # 1. Spin up the Producer
     p = threading.Thread(target=log_producer)
     p.start()
+
+    # If need multiple producers
+    # producers = []
+    # for _ in range(3):
+    #     p = threading.Thread(target=log_producer)
+    #     producers.append(p)
+    # for p in producers:
+    #     p.join()
     
     # 2. Spin up 2 Consumers
     consumers = []
