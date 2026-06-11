@@ -1,6 +1,6 @@
 ---
 title: "Week Three Day Three (W3D3)"
-description: ""
+description: "Race Condition"
 author: "Awesome Yi"
 date: "2026-06-08"
 categories: [Week3]
