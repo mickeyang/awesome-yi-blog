@@ -10,8 +10,10 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Advance Python"
-        href: python-series.qmd      
+      - text: "Python"
+        href: python-series.qmd
+      - text: "R"
+        href: r-programming.qmd 
       - text: "AI"
         href: ai.qmd
       - text: "Buddism"
@@ -21,8 +23,6 @@ website:
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/mickeyang/
-      # - icon: github
-        # href: https://github.com/
 format:
   html:
     theme:
