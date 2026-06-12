@@ -1,0 +1,22 @@
+---
+title: "R Programming"
+description: "I advocate R."
+author: "Awesome Yi"
+date: "2026-06-12"
+listing: 
+    contents: "r-programming/*/index.qmd"
+    type: default
+    sort: "date asc"
+    feed: true
+    categories: true
+    sort-ui: false
+    filter-ui: false
+    exclude:
+        author: "draft*"
+page-layout: full
+title-block-banner: true
+# image: cover-image.jpg
+---
+
+> I used R quite a lot. I got to learn R programming when I studied in New Zealand, where is the birth place of R programming language.
+
