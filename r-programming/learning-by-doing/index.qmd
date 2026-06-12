@@ -11,3 +11,5 @@ image: cover.jpg
 
 - Using `here::here` for better file path management. This is especially useful if you want to share your project/code with others. It will save others time for setting up a working direcotory.
 
+- Using `ALT + 0` to fold codes, and `ALT + SHIFT + 0` to reverse.
+
