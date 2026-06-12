@@ -102,3 +102,6 @@ Today, the project is officially known as the **IANA Time Zone Database** (maint
 
 When you type `OlsonNames()` into R, you are using a direct link to the foundational work Arthur David Olson started decades ago!
 
+# References
+
+[Time Zone Databases Explained: The IANA tzdata That Powers Your Digital Life](https://worldclocklive.com/blog/time-zone-databases-explained/)
