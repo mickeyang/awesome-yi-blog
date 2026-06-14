@@ -1,6 +1,6 @@
 ---
-title: "Shrink Parquet Column and Compress Parquet Dataset"
-description: "`Dictionary Encoding` and `Run-Length Encoding`"
+title: "Week Four Day Two (W4D2) "
+description: "Shrink Parquet Column and Compress Parquet Dataset"
 author: "Awesome Yi"
 date: "2026-06-14"
 categories: [Week4]
