@@ -1,0 +1,12 @@
+---
+title: "Deal With Failed Threads"
+description: "Using the built-in context manager of `concurrent.futures`"
+author: "Awesome Yi"
+date: ""
+categories: []
+image: cover.jpg
+---
+
+What happens when things go wrong in a parallel system?
+
+built-in context managers of concurrent.futures
