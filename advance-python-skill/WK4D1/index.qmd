@@ -1,0 +1,66 @@
+---
+title: "Week Four Day One (W4D1)"
+description: "Row-Oriented and Columnar data"
+author: "Awesome Yi"
+date: "2026-06-14"
+categories: [Week4]
+---
+
+# Row-Oriented and Columnar Data
+
+| Layout Type| Definition | Best For | File Type |
+| :--- | :--- | :--- | :--- |
+| Row-Oriented | Data sits in one continuous block on disk | Transactional systems (OLTP) | CSV, JSON, Traditional SQL |
+| Columnar | All values for a single column are grouped together sequentially on disk | Analytical querying (OLAP) and Data Warehouses (Snowflake, BigQuery) | Parquet, ORC |
+
+Row-Oriented **Disadvantage**: massive disk I/O bottlenecks when reading unnecessary columns because row-based block storage.
+
+Other Columnar Data **Advantage**: **Heavy Compression** because a single column shares the exact same data type (e.g., all integers or all strings).
+
+## Apache Parquet **Projection Pushdown**
+
+Definition: when your pipeline requests specific columns, the file reader reads the file's footer metadata first, maps exactly where those columns are physically located on disk, and extracts only those bytes. The technique reads only the specific columns requested in a query. By "pushing" the column selection down to the storage layer, the query engine skips parsing or retrieving irrelevant data, drastically reducing disk I/O and network transfers.
+
+Note: there is also another technique called **Predicate Pushdown**, which is optimised to reduce rows (rather than columns).
+
+### Why Projection Pushdown matters financially?
+
+In production, when querying terabytes of cloud storage (like AWS S3), this exact line of code is what prevents your cloud bill from skyrocketing and keeps your pipelines running in seconds rather than hours.
+
+
+# Sample
+
+```
+import pandas as pd
+
+# The Aggressive Row Approach (CSV)
+# Even if you look at one column, the engine must parse the entire string file.
+df_csv = pd.read_csv("massive_data.csv")
+average_balance = df_csv["Account_Balance"].mean()
+
+# The Columnar Approach (Parquet)
+# The engine performs Projection Pushdown, only reading the requested column from disk.
+df_parquet = pd.read_parquet("massive_data.parquet", columns=["Account_Balance"])
+average_balance = df_parquet["Account_Balance"].mean()
+```
+
+# Basic usage of the `pyarrow` package
+
+```
+# Load pyarrow package
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+# create a table
+table = pa.table({"use_id" : [1, 2, 3]}) # this is similar to pd.DataFrame({})
+
+# export data to a parquet file
+pd.write_table(table, "analytics_stream.parquet)
+
+# read parquet file schema
+parquet_file = pq.ParquetFile("analytics_stream.parquet")
+parquet_file.schema
+
+# use projection pushdown to read specific columns
+specific_columns = pq.read_table("analytics_stream.parquet", columns=["user_id"]) 
+```
