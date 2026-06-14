@@ -6,7 +6,7 @@ date: "2026-06-14"
 categories: [Week4]
 ---
 
-> There are two techniques enabling column shrink and dataset compression.
+> There are two techniques enabling column shrink and dataset compression, including `Dictionary Encoding` and `Run-Length Encoding`.
 
 # Dictionary Encoding
 
