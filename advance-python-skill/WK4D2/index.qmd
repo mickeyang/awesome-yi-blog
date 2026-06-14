@@ -1,0 +1,24 @@
+---
+title: "Shrink Parquet Column and Compress Parquet Dataset"
+description: "`Dictionary Encoding` and `Run-Length Encoding`"
+author: "Awesome Yi"
+date: "2026-06-14"
+categories: [Week4]
+---
+
+> There are two techniques enabling column shrink and dataset compression.
+
+# Dictionary Encoding
+
+Apply highly intelligent encodings to turn repetitive text into mathematical shorthand, by building a small internal dictionary matrix for repetitive values.
+
+# Run-Length Encoding (RLE)
+
+Instead of writing [0, 0, 0, 0, 0], RLE compresses the list into a simple counter expression: "Five zeros" (5 * 0). This requires analysts sorting specific columns **BEFORE** exporting data to a parquet file.
+
+
+::: {.callout-tip}
+Sorting your data by high-repetition columns (like country, status, or date) right before writing it to a Parquet file will drastically shrink the file size and accelerate read performance.
+
+You can typically only choose one or two primary columns to sort your data by before writing. **Always pick the columns that are highly repetitive (for compression) and frequently used in your SQL WHERE clauses (for search speed)**.
+:::
