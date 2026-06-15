@@ -1,0 +1,24 @@
+---
+title: "Week Four Day Three (W4D3)"
+description: "Horizontal Data Slicing"
+author: "Awesome Yi"
+date: "2026-06-15"
+categories: [Week4]
+---
+
+# Horizontal Data Slicing
+
+## Internal Slicing: Row Groups
+
+Breaks the data into horizontal chunks called **Row Groups** (typically every 128 MB to 512 MB of data).
+
+Row Group Skipping - skip a data block if a search ID not within the min_id and max_id of the block.
+
+
+## External Slicing: Directory Partitioning
+
+Small File Problem (or Over-partitioning) - partitioning by unique values (such as unique user_id).
+
+# TIPS
+
+Only partition by columns that have low cardinality (ideally under 100 unique values) and are heavily filtered on, such as `year`, `month`, `region`, or `status`.
