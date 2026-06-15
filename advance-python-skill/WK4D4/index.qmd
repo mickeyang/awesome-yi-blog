@@ -1,0 +1,17 @@
+---
+title: "Week Four Day Four (W4D4)"
+description: "Merge Data Changes"
+author: "Awesome Yi"
+date: "2026-06-15"
+categories: [Week4]
+---
+
+# Schema Evolution - Handle data changes
+
+## Safe Data Changes
+- Add a new column
+- Delete an unused column
+
+## Breaking changes
+- Change an exisiting data type
+- Rename an exisiting column
