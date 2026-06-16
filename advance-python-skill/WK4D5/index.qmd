@@ -1,0 +1,29 @@
+---
+title: "Week Four Day Five (W4D5)"
+description: "Embedded SQL Engine - `duckdb`"
+author: "Awesome Yi"
+date: "2026-06-16"
+categories: [Week4]
+---
+
+# `duckdb` - Embedded SQL Engine
+
+Run SQL queries directly against raw Parquet files sitting on a local disk, without loading data into a database.
+
+The `duckdb` SQL engine is a columnar SQL engine, which has NO external dependencies and requires no server setup.
+
+# Predicate Pushdown
+
+Unlike `Projection Pushdown` which deals with **columns**. `Predicate Pushdown` is a **row-level** pushdown, which ensures rows that do not match your `where` condition are never scanned on disk.
+
+# Example
+
+```
+import duckdb
+
+duckdb.query("""
+    SELECT COLUMN 
+    FROM 'A_PARQUET_FILE.parquet'
+    WHERE COLUMN IS NOT NULL
+""").to_df()
+```
