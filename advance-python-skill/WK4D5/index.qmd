@@ -27,3 +27,7 @@ duckdb.query("""
     WHERE COLUMN IS NOT NULL
 """).to_df()
 ```
+
+# References
+
+- [`duckdb` in R](https://duckdb.org/docs/current/clients/r)
