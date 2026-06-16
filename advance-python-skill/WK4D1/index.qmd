@@ -11,22 +11,27 @@ categories: [Week4]
 | Layout Type| Definition | Best For | File Type |
 | :--- | :--- | :--- | :--- |
 | Row-Oriented | Data sits in one continuous block on disk | Transactional systems (OLTP) | CSV, JSON, Traditional SQL |
-| Columnar | All values for a single column are grouped together sequentially on disk | Analytical querying (OLAP) and Data Warehouses (Snowflake, BigQuery) | Parquet, ORC |
+| Columnar | All values for a single column are grouped together sequentially on disk | Analytical querying (OLAP) and Data Warehouses (Snowflake, BigQuery) | Parquet, ORC (Optimized Row Columnar) |
 
 Row-Oriented **Disadvantage**: massive disk I/O bottlenecks when reading unnecessary columns because row-based block storage.
 
-Other Columnar Data **Advantage**: **Heavy Compression** because a single column shares the exact same data type (e.g., all integers or all strings).
+Columnar Data **Advantage**: **Heavy Compression** because a single column shares the exact same data type (e.g., all integers or all strings).
+
+## Difference Between Parquet and ORC
+
+Parquet and ORC are both columnar storage formats, but Parquet excels in read-heavy analytical workloads while ORC is optimized for write-heavy tasks and Hive integration.
 
 ## Apache Parquet **Projection Pushdown**
 
 Definition: when your pipeline requests specific columns, the file reader reads the file's footer metadata first, maps exactly where those columns are physically located on disk, and extracts only those bytes. The technique reads only the specific columns requested in a query. By "pushing" the column selection down to the storage layer, the query engine skips parsing or retrieving irrelevant data, drastically reducing disk I/O and network transfers.
 
-Note: there is also another technique called **Predicate Pushdown**, which is optimised to reduce rows (rather than columns).
+::: {.callout-note}
+There is also another technique called **Predicate Pushdown**, which is optimised to reduce rows (rather than columns). This is covered in [Week4 Day 5 study](https://awesomeyi-blog.share.connect.posit.cloud/advance-python-skill/WK4D5/).
+:::
 
 ### Why Projection Pushdown matters financially?
 
-In production, when querying terabytes of cloud storage (like AWS S3), this exact line of code is what prevents your cloud bill from skyrocketing and keeps your pipelines running in seconds rather than hours.
-
+In production, when querying terabytes of cloud storage (like AWS S3), **Projection Pushdown** is what prevents your cloud bill from skyrocketing and keeps your pipelines running in seconds rather than hours.
 
 # Sample
 
