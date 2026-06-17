@@ -10,7 +10,26 @@ categories: [Week4]
 
 # Dictionary Encoding
 
-Apply highly intelligent encodings to turn repetitive text into mathematical shorthand, by building a small internal dictionary matrix for repetitive values.
+Apply highly intelligent encodings to turn repetitive text into mathematical shorthand, by building a small internal dictionary matrix for repetitive values. This technique works best when a column has few unique values (low-cardinality columns), and values are repeated a lot.
+
+## Example
+
+Think about a column containing fruit names, such as ["apple", "banana", "apple", "apple", "banana"]. The Dictionary Encoding technique would map apple to 1 and banana to 2. Therefore, the column would be "transformed" to [1, 2, 1, 1, 2].
+
+```
+{
+    "apple" : 1,
+    "banana" : 2
+}
+```
+
+## Benefits
+
+1. Storing small integers (0, 1, …) is much cheaper than storing full strings.
+2. Especially powerful for low-cardinality columns (few unique values).
+3. Encoded integers compress better with algorithms like RLE (Run-Length Encoding).
+4. Operations like filtering (`WHERE fruit = 'apple'`) can be done on the encoded integers.
+5. Less data to scan = faster reads.
 
 # Run-Length Encoding (RLE)
 
