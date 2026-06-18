@@ -10,15 +10,54 @@ categories: [Week4]
 
 ## Internal Slicing: Row Groups
 
-Breaks the data into horizontal chunks called **Row Groups** (typically every 128 MB to 512 MB of data).
+Definition: a **row group** is a chunk of rows stored together inside a Parquet file. This technique breaks the data into horizontal chunks called **Row Groups** (typically every 128 MB to 512 MB of data). Each **column** is stored separately within the row group.
 
-Row Group Skipping - skip a data block if a search ID not within the min_id and max_id of the block.
+Metadata of each row group consists of:
+1. Min/Max values per **column**
+2. Number of rows
+3. Compression information
+
+Row Group is important for **Predicate Pushdown**. It helps skip a data block if a search ID (e.g., `user_id`) not within the min_id and max_id of the block. When write table to a Parquet file, you can use `row_group_size` to control row groups.
+
+```
+import pyarrow as pa
+import pyarrow.parquet as pq
+table = pa.Table.from_pandas(df)
+pq.write_table(table, 'data.parquet', row_group_size = 100_000) # 100_000 is max number of row per row group
+
+# Pandas approach
+df.to_parquet(
+    'data.qarquet',
+    engine = 'pyarrow',
+    row_group_size = 100_000
+)
+```
+
+::: {.callout-note}
+Think of a Parquet file like a book:
+- File = Book
+- Row Group = Chapter
+- Column Chunk = Page for a specific topic
+- Metadata = Chapter summary
+:::
+
+
+::: {.callout-tip}
+You can use below code to find out size of each ROW. This information is helpful when deciding how many rows are needed for each row group.
+
+```
+import pyarrow as pa
+table = pa.Table.from_pandas(df)
+size_per_row = table.nbytes / table.num_rows
+```
+
+:::
 
 
 ## External Slicing: Directory Partitioning
 
 Small File Problem (or Over-partitioning) - partitioning by unique values (such as unique user_id).
 
-# TIPS
-
-Only partition by columns that have low cardinality (ideally under 100 unique values) and are heavily filtered on, such as `year`, `month`, `region`, or `status`.
+::: {.callout-tip}
+When conducting **Directory Partitioning**, only partition by columns that have low cardinality (ideally under 100 unique values) and are heavily filtered on, such as `year`, `month`, `region`, or `status`.
+:::
