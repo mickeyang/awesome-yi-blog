@@ -13,3 +13,18 @@ image: cover.jpg
 
 - Using `ALT + 0` to fold codes, and `ALT + SHIFT + 0` to reverse.
 
+- Use `list_rbind()` to supercede ``map_dfr()`. For exmaple, `my_data |> map(my_function) |> list_rbind().
+
+- Name a vector
+
+````
+library(dplyr)
+
+temperature <- c(5, 8, 32, -2) %>%
+    rlang::set_names(case_when(
+        . >= 30 ~ "hot",
+        . > 15 ~ "warm",
+        .default = "freezing"
+    )
+)
+```
