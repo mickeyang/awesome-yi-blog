@@ -1,0 +1,85 @@
+---
+title: "Week Five Day One (W5D1)"
+description: "Bottleneck Hunting with `cProfile`"
+author: "Awesome Yi"
+date: "2026-06-22"
+image: cover.jpg
+categories: [Week5]
+---
+
+# Relevant modules
+
+## `cProfile`
+
+### What
+
+The `cProfile` library is a Python built-in module. The "c" in its name signifies that it's written in C, which makes it very fast and introduces minimal overhead.
+
+A **profiler** is a tool that analyses your code's performance to help you identify bottlenecks. Instead of guessing which parts of your code are slow, a profiler gives you precise data on how much time and how many calls are spent on each function.
+
+### `cProfile` report colums
+
+- `ncalls` : The number of times the function was called.
+- `tottime` :The total time spent inside the function itself, excluding any time spent in functions it called (sub-functions). This is the most important metric for finding a function that is computationally expensive on its own.
+- `percall` (first one) : The average time per call, calculated as tottime / ncalls.
+- `cumtime` : The cumulative time spent in the function plus all sub-functions it called. This helps you understand the total cost of a high-level operation.
+- `percall` (second one) : The average cumulative time per call, calculated as cumtime / ncalls.
+- `filename:lineno(function)`: The location of the function.
+
+```
+profiler = cProfile.Profile()
+profiler.enable()
+results = heavy_pipeline(log_data) # run any steps between enable() and disable() for a profiling
+profiler.disable()
+```
+
+## `pstats`
+
+The `pstats` module always need to be used altogether with the `cProfile` module. Think of it this way: `cProfile` generates a raw, binary log of every function call, and `pstats` turns that log into a readable, actionable report.
+
+```
+# Approach one: Read stats from a profiler directly
+stats = pstats.Stats(profiler).sort_stats('tottime') # order by total time value
+stats.print_stats(10) # limit to 10 rows
+
+# Approach two: Save to a file
+profiler.dump_stats("profile_run.prof")
+# Load from a file later
+stats = pstats.Stats("profile_run.prof")
+```
+
+# Example
+
+```
+import cProfile
+import pstats
+import re
+
+log_data = ["  [ERROR] USER_ID:102938 - Connection timed out after 30s   " for _ in range(100_000)]
+
+# Fix: Compile ONCE at the module level
+USER_ID_PATTERN = re.compile(r"user_id:(\d+)")
+
+def clean_whitespace(text):
+    return text.strip().lower()
+
+def extract_user_id(text):
+    # Now we just reference the pre-compiled object
+    match = USER_ID_PATTERN.search(text)
+    return match.group(1) if match else None
+
+def heavy_pipeline(data):
+    cleaned = [clean_whitespace(line) for line in data]
+    user_ids = [extract_user_id(line) for line in cleaned]
+    return user_ids
+
+if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
+    
+    results = heavy_pipeline(log_data)
+    
+    profiler.disable()
+    stats = pstats.Stats(profiler).sort_stats('tottime')
+    stats.print_stats(10) # print out top 10 rows based on the tottime column
+```
