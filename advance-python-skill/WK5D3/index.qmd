@@ -1,6 +1,6 @@
 ---
 title: "Week Five Day Three (W5D3)"
-description: "Unit testing in Python `pytest`"
+description: "Unit test in Python using `MagicMock` + `.return_value`"
 author: "Awesome Yi"
 date: "2026-06-23"
 categories: [Week5]
@@ -12,17 +12,13 @@ Arrange, Act, Assert
 
 ## Arrange
 
-```python
-mock_client = MagicMock()
-mock_body = MagicMock()
-```
-
 ```{{python}}
 mock_client = MagicMock()
 mock_body = MagicMock()
 ```
 
-```{.python}
-mock_client = MagicMock()
-mock_body = MagicMock()
-```
+## Act
+
+
+
+## Assert
