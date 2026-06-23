@@ -1,0 +1,7 @@
+---
+title: "Week Five Day Two (W5D2)"
+description: "Save RAM memory using `__slots`"
+author: "Awesome Yi"
+date: "2026-06-22"
+categories: [Week5]
+---
