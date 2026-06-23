@@ -1,0 +1,9 @@
+---
+title: "Week Five Day Four (W5D4)"
+description: "Unit test in Python using `MagicMock` + `.side_effect`"
+author: "Awesome Yi"
+date: "2026-06-23"
+categories: [Week5]
+---
+
+Use `.side_effect` to handle an intentional error when conducting a unit test.
