@@ -1,0 +1,30 @@
+---
+title: "Week Five Day Five (W5D35)"
+description: "Parameterized Testing in Python"
+author: "Awesome Yi"
+date: "2026-06-24"
+categories: [Week5]
+---
+
+# Using `@pytest.mark.parametrize()`
+
+```python
+@pytest.mark.parametrize(
+    "test_input, expected_output",
+    [
+        ("input_value", "expected_out_value")
+    ]
+)
+
+def test_your_function(test_input, expected_output):
+    """
+    Pytest will run this exact function 6 separate times, swapping out
+    test_input and expected_output automatically for each case.
+    """
+    # Act
+    actual_result = do_something(test_input)
+    
+    # Assert
+    assert actual_result == expected_output
+```
+
