@@ -17,3 +17,19 @@ categories: [clinical]
 # Haemorrhagic Stroke
 
 是中风（stroke）的一种，但不是心脏stroke，而是大脑，即大脑的出血性中风，也称为脑溢血，会造成大脑的不可逆损伤。
+
+
+> **HDL is “good” cholesterol, LDL is “bad” cholesterol, and total cholesterol (TC) is the sum of all cholesterol in your blood, providing an overall picture of cardiovascular risk.**
+
+# HDL (High-Density Lipoprotein)
+
+HDL cholesterol is considered **good cholesterol** because it helps remove excess cholesterol from your arteries and transports it back to the liver for processing and elimination, reducing the risk of heart disease and stroke. Higher HDL levels are generally protective. For men, an HDL above 40 mg/dL is desirable, while for women, levels above 50 mg/dL are preferred. An HDL of 60 mg/dL or higher is considered particularly beneficial. Lifestyle factors such as regular physical activity, maintaining a healthy weight, avoiding tobacco, and eating a heart-healthy diet can help increase HDL levels.
+
+# LDL (Low-Density Lipoprotein)
+
+LDL cholesterol is often called **bad cholesterol** because it can deposit cholesterol in the walls of arteries, forming plaque that narrows arteries and increases the risk of heart attack, stroke, and peripheral artery disease. Target LDL levels depend on individual risk factors: generally, lower LDL is better, especially for people with heart disease or diabetes. High LDL levels are influenced by genetics, diet, and lifestyle, and may require medical management if elevated.
+
+# Total Cholesterol (TC)
+
+Total cholesterol represents the **sum of all cholesterol in your blood**, including HDL, LDL, and a portion of triglycerides. It provides a broad overview of cholesterol status but does not distinguish between harmful and protective types. A desirable total cholesterol is generally **below 200 mg/dL**, 200–239 mg/dL is borderline high, and 240 mg/dL or above is high. Because TC includes both HDL and LDL, a high total cholesterol does not always indicate high risk if HDL is also high.
+
