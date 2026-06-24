@@ -5,3 +5,5 @@ post-template.txt
 posts/example/
 chat.json
 *.parquet
+.pytest_cache
+__pycache__
