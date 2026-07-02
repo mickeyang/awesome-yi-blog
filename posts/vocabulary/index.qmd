@@ -119,3 +119,11 @@ Some English and Chinese vocabulary
 
 - stumble (to hit your foot on something when you are walking or running so that you fall or almost fall)
 
+# 2026-07-02
+
+- [extrapolation](ai-english/english-extrapolation.md)
+
+- [interpolation](ai-english/english-interpolation.md)
+
+- [obscure](ai-english/english-obscure.md)
+
