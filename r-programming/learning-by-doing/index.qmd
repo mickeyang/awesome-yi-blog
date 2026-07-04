@@ -33,5 +33,15 @@ temperature <- c(5, 8, 32, -2) %>%
 
 ```r
 letter_vector <- sample(LETTERS, 100, replace = TRUE)
-letter_vector |> (\(x) x[1:10])() # get the first-ten element only
+letter_vector |> (\(x) x[1:10])() # get the first-ten element only, must attach () to execute the anonymous function
+letter_vector |> (fuction(x) x[1:10])() # get the first-ten element only, must attach () to execute the anonymous function
+
+# ALTERNATIVELY, I can use {} rather than () BUT MUST use `%>%` pipe, not `|>` pipe
+library(magrittr)
+letter_vector %>% {.[1:10]} # The `.` symbol represents the letter_vector vector
+letter_vector %>% # the {} block allows multiple steps within it
+  {
+  first10 <- .[1:10]
+  sort(first10)
+  }
 ```
