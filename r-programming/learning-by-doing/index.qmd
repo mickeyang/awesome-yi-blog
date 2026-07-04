@@ -13,9 +13,9 @@ image: cover.jpg
 
 - Using `ALT + 0` to fold codes, and `ALT + SHIFT + 0` to reverse.
 
-- Use `list_rbind()` to supercede ``map_dfr()`. For exmaple, `my_data |> map(my_function) |> list_rbind().
+- Using `list_rbind()` to supercede `map_dfr()`. For exmaple, `my_data |> map(my_function) |> list_rbind()`.
 
-- Name a vector using `rlang::set_names()`
+- Name a vector using `rlang::set_names()`.
 
 ```r
 library(dplyr)
