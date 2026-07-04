@@ -17,7 +17,7 @@ image: cover.jpg
 
 - Name a vector
 
-````
+```r
 library(dplyr)
 
 temperature <- c(5, 8, 32, -2) %>%
