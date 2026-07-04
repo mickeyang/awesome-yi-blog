@@ -33,5 +33,5 @@ temperature <- c(5, 8, 32, -2) %>%
 
 ```r
 letter_vector <- sample(LETTERS, 100, replace = TRUE)
-letter_vector |> (\(x) x[1:10])() # get the first element only
+letter_vector |> (\(x) x[1:10])() # get the first-ten element only
 ```
