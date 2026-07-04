@@ -127,3 +127,5 @@ Some English and Chinese vocabulary
 
 - [obscure](../../ai-english/english-obscure.md)
 
+- [idiomatic](../../ai-english/english-idiomatic.md)
+
