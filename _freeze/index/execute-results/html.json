@@ -1,0 +1,15 @@
+{
+  "hash": "b6dd6a5e30af80f709ee91df4b79b2a2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Awesome Yi\"\nsubtitle: \"The world in my eyes.\"\nlisting:\n  contents: posts\n  feed: true\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\n  exclude:\n    author: \"draft*\"\npage-layout: full\ntitle-block-banner: true\n---\n\n::: {.cell}\n\n:::\n\n\nThis blog site was recently updated on **2026\\-07\\-05**.\n\n<br>",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
