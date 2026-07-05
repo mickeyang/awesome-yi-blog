@@ -7,7 +7,7 @@ categories: [diary]
 image: cover.jpg
 ---
 
--- When leveraging **Posit Connect Cloud** and **Quarto** publishing, there is **NO NEED** to set up a *GitHub Action* file. This is because the Quarto eco-system already embedded the CI/CD flow natively. Besides, when setting up the primary file of a Posit Connect Cloud project, you can select the `_quarto.yml` file, not necessarily a `index` file.
+- When leveraging **Posit Connect Cloud** and **Quarto** publishing, there is **NO NEED** to set up a *GitHub Action* file. This is because the Quarto eco-system already embedded the CI/CD flow natively. Besides, when setting up the primary file of a Posit Connect Cloud project, you can select the `_quarto.yml` file, not necessarily a `index` file.
 
 - Using `callr::rscript` to create a clean and empty runtime for a R script. This is especially useful when `source` an external R script/file within a running R session.
 
