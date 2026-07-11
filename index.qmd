@@ -20,6 +20,6 @@ today <- as.character(Sys.Date())
 # rsconnect::writeManifest(contentCategory = "site")
 ```
 
-This blog site was recently updated on **`{r} today`**.
+This blog site was recently updated on **`{r} today`**. I found another blog, which was based on a Wordpress framework and created years ago by me. [Here it is - Mickey's WonderWorld](https://mickeyang.wordpress.com/)
 
 <br>
