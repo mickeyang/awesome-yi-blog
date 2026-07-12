@@ -1,0 +1,64 @@
+---
+title: "`renv` in R"
+description: "Project Level R Package Management"
+author: "Awesome Yi"
+date: "2026-07-12"
+categories: [tips]
+# image: cover.jpg
+---
+
+The `renv` package is used for R package management at **project level**. It can help trace packages versions and keep environments **reproducible** sharing R projects with others or deploying projects to a server.
+
+- Each project has its own isolated environment (a folder shown as `renv/library`).
+
+- Each project has a `renv.lock` tracking package versions.
+
+- renv caches packages globally hence no duplication downloads of the same package could happen.
+
+# How to start
+
+
+::: {.callout-tip}
+
+Simply run `renv::init()` in a R console. It will create a `renv/library` folder, a `.Rprofile` file, and a `renv.lock` file.
+
+:::
+
+
+::: {.callout-caution}
+
+Do not commit the `renv/library` folder to version control.
+
+:::
+
+# Add a package
+
+When adding a new package, it will go to the project's isolated library folder.
+
+
+::: {.callout-note}
+
+Remember to use `renv::snapshot()` to add a new package to the `renv.lock` file.
+
+Only used packages are added to the `renv.lock` file, not every installed package is actively used in a R project.
+
+:::
+
+# Check sync status
+
+Use `renv::status()` to check if all packages are captured in the `renv.lock` file or not.
+
+# Restore an environment
+
+Start with `renv::status()`, if installed packages and the `renv.lock` file is out of sync, you can use `renv::restore()` to update/install required packages as tracked by the `renv.lock` file.
+
+
+::: {.callout-note}
+
+If a package is already used by another project, then the `renv::restore()` command would use the cached package/library rather than downloading it again. This saves disk space and speeds up restore process.
+
+:::
+
+# Online course
+
+Posit has introduced an [online how-to course](https://academy.posit.co/getting-started-with-renv) of using `renv`.
