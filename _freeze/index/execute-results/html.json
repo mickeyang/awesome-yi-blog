@@ -1,9 +1,11 @@
 {
-  "hash": "b6dd6a5e30af80f709ee91df4b79b2a2",
+  "hash": "fbc4164fe33412130913178101b1eca3",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Awesome Yi\"\nsubtitle: \"The world in my eyes.\"\nlisting:\n  contents: posts\n  feed: true\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\n  exclude:\n    author: \"draft*\"\npage-layout: full\ntitle-block-banner: true\n---\n\n::: {.cell}\n\n:::\n\n\nThis blog site was recently updated on **2026\\-07\\-05**.\n\n<br>",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Awesome Yi\"\nsubtitle: \"The world in my eyes.\"\nlisting:\n  contents: posts\n  feed: true\n  sort: \"date desc\"\n  type: default\n  categories: true\n  sort-ui: false\n  filter-ui: false\n  exclude:\n    author: \"draft*\"\npage-layout: full\ntitle-block-banner: true\n---\n\n::: {.cell}\n\n:::\n\n\nThis blog site was recently updated on **2026\\-07\\-13**. I found another blog, which was based on a Wordpress framework and created years ago by me. [Here it is - Mickey's WonderWorld](https://mickeyang.wordpress.com/)\n\n<br>",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],

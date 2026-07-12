@@ -55,3 +55,25 @@ If a package is already used by another project, then the `renv::restore()` comm
 # Online course
 
 Posit has introduced an [online how-to course](https://academy.posit.co/getting-started-with-renv) of using `renv`.
+
+# Flowchart
+
+## Initiate
+
+```{mermaid}
+flowchart TD
+Start([Start]) --> Init["renv::init()"]
+Init --> Status{"renv::status()"}
+Status -- Consistent --> DoNothing[Do nothing]
+DoNothing --> End([End])
+Status -- Inconsistent --> Restore["renv::restore()"]
+Restore --> Status
+```
+
+## Add library
+
+```{mermaid}
+flowchart LR
+Start([Install a library]) --> Call("Call library()")
+Call --> Snapshot("renv::snapshot()") --> End([End])
+```
