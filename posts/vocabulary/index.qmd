@@ -129,3 +129,5 @@ Some English and Chinese vocabulary
 
 - [idiomatic](../../ai-english/english-idiomatic.md)
 
+- [genuine](../../ai-english/english-Genuine.md)
+
