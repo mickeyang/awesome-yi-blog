@@ -1,0 +1,44 @@
+---
+title: "最近有点忙碌，有写overwhelmed"
+description: "Too much going on"
+author: "Awesome Yi"
+date: "2026-07-14"
+categories: [diary]
+# image: cover.jpg
+---
+
+# 写在前面
+
+最近lots of learning going on，梳理了一下，确定优先级，避免信息爆炸和杂乱。
+
+- 先把开源的课及时更进，因为只有10天的时限。
+- 然后开始JavaScript的学习。
+- 在过程中，优化和强化AI产品的使用，慢慢搭建自己的知识库和博客内容。
+
+# JavaScript
+
+上个月在Gemini AI的帮助下，深入学习Python在Data Engineering中的相关知识点。同时还玩了Google Apps Script，觉得很不错，也免费实现了一直都想实现的automation给自己发一些邮件。
+
+这个月计划开始深入学习JavaScript在Data Engineering中的具体应用，也是让AI设计了课程。 掌握这门语言之后，也可以帮助我更好的理解和优化GAS里AI生成的代码。
+
+# 网络安全
+
+报名了开源社区的网络安全课程，浙江大学的杜文亮教授老师授课。这门课是基于美国SEED实验室提供的课程框架和实验环境。整个课程一共10天，当然，不可能在10天就掌握整个课程，能入门是我的目标。 找到相关资料，自己再慢慢学习。
+
+# AI泛滥
+
+最近主要使用了4个不同的AI产品，有OpenAI的ChatGPT， Google的Gemini， 腾讯的元宝，以及智谱的GLM。各个产品的体验都还不错，智谱的产品便宜但是“品控”做得不是很好，因为好几次回复都说自己是“ChatGPT"。听说这是智谱“蒸馏”了ChatGPT的原因。
+
+最喜欢的是ChatGPT，因为它的“记忆”功能的确做得不错，能提出当前的对话，衔接到过去的一些回复和谈话内容。
+
+所以我打算把ChatGPT作为主力AI使用，作为信息的汇总点。在使用了别的AI产品之后，蒸馏提纯，然后再attach的ChatGPT的Projects资料库当中。
+
+考虑逐步形成工作流，整合到Obsidian中。目前来看可能再等等，因为要学习和整理的东西已经非常多了，每天都争分夺秒地活着。
+
+# Google Calendar & Tasks
+
+差点忘记说，我最近开始使用Google Calendar和Google Tasks帮助我plan近期关注的事情，也是在AI的帮助下，目前新的日程管理系统还运行得不错，每天凌晨都会自动给我发邮件提醒我当天需要关注的重点。
+
+还是Google好，微软的Power Automate要机构账号才能使用，我的msn个人账号用不了，所以自动化就变得很困难。还是Google更亲民呢。
+
+以上，大概就是这样。
