@@ -6,7 +6,6 @@ date: "2026-07-15"
 categories: [diary]
 ---
 
-```text
 01 - 烧水
 02 - 花茶
 03 - 红茶
@@ -25,4 +24,3 @@ categories: [diary]
 16 - 咖啡
 17 - 消毒
 18 - 保温
-```
