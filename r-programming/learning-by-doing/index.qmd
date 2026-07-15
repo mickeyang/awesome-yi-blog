@@ -47,3 +47,22 @@ letter_vector %>% # the {} block allows multiple steps within it
   sort(first10)
   }
 ```
+
+- Using R to calculate age between two dates. When a result needs to be read/analysed by a human-being, use time-length() or as.period() functions. When a result needs to be consumed by a computer for storage, sorting, use the int_length() function.
+
+```r
+# calculate age between two dates
+library(lubridate)
+date_one <- as.Date("2000-02-28")
+date_two <- as.Date("2020-02-29")
+date_interval <- lubridate::interval(date_one, date_two)
+
+# OPTION ONE
+age = floor(time_length(date_interval, "years")) # trunc() is the same
+# floor(time_length(date_one %--% date_two, "years")) use %--% operator
+message(paste0("Current age is: ", age))
+
+# OPTION TWO
+age = as.period(date_interval)@year
+message(paste0("Current age is: ", age))
+```
