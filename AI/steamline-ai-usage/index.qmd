@@ -1,0 +1,65 @@
+---
+title: "Steamline AI Usage"
+description: "Stop AI Fatigue"
+author: "Awesome Yi"
+date: "2026-07-18"
+categories: [Productivity]
+image: cover.jpg
+---
+
+# Steps for Using AI tool
+
+- Choose which tool to use for a question? (**Strict Routing**)
+- Rename a conversation, e.g., [AI]blabla 
+- Summarise a good answer/conversation (a **Central Ledger** for archive)
+
+# Routing Logic
+
+- OpenAI **ChatGPT** = daily driver
+- Google **Gemini** = big files / research
+- Tecent **Yuanbao** = Chinese context
+- Zhipu **GLM** = Chinese academic / backup
+
+# Archive Central Ledger
+
+- Use **ChatGPT**, taking advantages of its **MEMORY** and **PROJECT** features
+- Use a Note APP, e.g., **Obsidian**
+
+# The Copy-and-Paste Ledger Prompt
+
+## Sample Prompt A
+
+```text
+Please review our conversation above and generate a structured summary for my central knowledge ledger. Do not include any introductory or concluding conversational filler—just output the filled-out template below based on what we just accomplished.
+
+Central Ledger Log
+
+- Topic/Project: [Identify the specific project, assignment, or problem we worked on]
+- AI Tool Used: [Insert the name of this specific AI tool, e.g., ChatGPT, Gemini, Yuanbao, Z-AI]
+- Status/Takeaway: [Provide a concise summary of the final solution, key breakthrough, or final code snippet we arrived at. Keep it actionable so I can understand it later at a glance.]
+- Direct Link: [Leave exactly as: `[Paste shared chat link here]`]
+```
+
+## Sample Prompt B
+
+```text
+Act as a knowledge management assistant. Summarize the provided AI interaction into a Markdown document. Adhere strictly to the following structural requirements:
+> Structural Requirements
+1. Format: Use standard Markdown.
+2. Front-matter: Start the document with a YAML front-matter block containing relevant metadata.
+3. Content Sections: Create a table using the specified columns.
+4. Constraints: Do not use any emojis. Ensure the tone is objective and professional.
+> Required Columns:
+- Date: The current date in YYYY-MM-DD format.
+- Question/Topic: The core subject or the verbatim question asked.
+- AI Model name: The specific model that generated the response (e.g., GPT-4, Claude 3 Opus).
+- Response link: If a link is provided, include it as a Markdown hyperlink; otherwise, state "N/A".
+- Outcome/Takeaway: A concise summary of the key points, conclusions, or actionable advice derived from the response.
+```
+
+### Use Case of Sample prompt B
+
+| Date | Question/Topic | AI Model name | Outcome/Takeaway |
+|------|----------------|---------------|---------------|
+| 2026-07-10 | Managing multiple AI tools (ChatGPT, Gemini, Yuanbao, Zhipu Z-AI) to avoid navigation confusion and maximize utility. | Yuanbao       | Establish a single "Home Base" (ChatGPT Projects or a note app) for logging. Route tasks by model strength: ChatGPT for general work, Gemini for large documents, Yuanbao for Chinese context, and Zhipu for Chinese academia. Implement a low-friction tracking system (naming conventions or a centralized log) and utilize a "Branch & Merge" workflow to move prompts between specialized tools and the Home Base. |
+| 2026-07-10 | Clarification on the usage of OpenAI ChatGPT's "add to project sources" feature. | Yuanbao | This feature converts one-time outputs or external links into persistent, project-wide context. Unlike single-chat file uploads, Sources are reusable across all chats within a Project. It serves as the "glue" in a multi-AI workflow, allowing users to distill outputs from external tools (like Gemini or Yuanbao) into ChatGPT, eliminating redundant re-uploading and ensuring consistent background knowledge. |
