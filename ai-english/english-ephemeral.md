@@ -50,7 +50,9 @@ Fill in the blank with **ephemeral**, **ephemerally**, or a synonym like **fleet
 *   **Mistake to avoid:** Don’t use it for things that are just "quick" (like a 5-minute task). Use it for things that appear and then vanish, often beautifully or sadly.
 
 ---
-**Answers to Exercise:**
+
+Answers to Exercise:
+
 1.  The beauty of a sunset is **ephemeral**. (Correct!)
 2.  In the digital age, privacy feels increasingly **ephemeral**. (Correct!)
 3.  The dancer moved so **ephemerally** across the stage... OR ...with such **ephemeral** grace... (Both work, but *ephemerally* focuses on the fleeting movement itself).
