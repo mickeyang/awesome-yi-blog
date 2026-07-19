@@ -129,5 +129,20 @@ Some English and Chinese vocabulary
 
 - [idiomatic](../../ai-english/english-idiomatic.md)
 
-- [genuine](../../ai-english/english-Genuine.md)
+- [genuine](../../ai-english/english-genuine.md)
 
+# 2026-07-19
+
+- [endianness](../../ai-english/english-endianness.md)
+
+- [ephemeral](../../ai-english/english-ephemeral.md)
+
+- [hunch](../../ai-english/english-hunch.md)
+
+- [octet](../../ai-english/english-octet.md)
+
+- [spoofing](../../ai-english/english-spoofing.md)
+
+- [sprawl](../../ai-english/english-sprawl.md)
+
+- [sprawl](../../ai-english/english-ergonomics.md)
