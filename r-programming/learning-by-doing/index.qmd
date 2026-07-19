@@ -48,7 +48,7 @@ letter_vector %>% # the {} block allows multiple steps within it
   }
 ```
 
-- Using R to calculate age between two dates. When a result needs to be read/analysed by a human-being, use time-length() or as.period() functions. When a result needs to be consumed by a computer for storage, sorting, use the int_length() function.
+- Using R to calculate age between two dates. When a result needs to be read/analysed by a human-being, use `time-length()` or `as.period()` functions. When a result needs to be consumed by a computer for storage, sorting, use the `int_length()` function.
 
 ```r
 # calculate age between two dates
