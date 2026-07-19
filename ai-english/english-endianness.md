@@ -14,7 +14,7 @@ Alright, let’s dive into **endianness**! This is a great word, especially if y
 
 ---
 
-### 🔹 Pronunciation  
+### Pronunciation  
 **endianness** /ˈen-di-ə-nəs/  
 (Think: *EN-dee-uh-nus*)  
 - Stress on the **first syllable**: **EN**-dee-uh-nus  
@@ -22,7 +22,7 @@ Alright, let’s dive into **endianness**! This is a great word, especially if y
 
 ---
 
-### 🔹 Tiny Concept Explanation  
+### Tiny Concept Explanation  
 **Endianness** refers to the **order** in which bytes (units of digital data) are arranged in computer memory. It’s basically whether the “big” part (most significant byte) or the “small” part (least significant byte) comes first.  
 
 There are two main types:  
@@ -37,18 +37,18 @@ There are two main types:
 - Big-endian is used in older systems (e.g., Motorola chips) and network protocols (so all devices agree on order).  
 - Little-endian is used in most modern computers (e.g., Intel/AMD chips).  
 
-**Fun fact**: The term comes from *Gulliver’s Travels*! In the book, the “Lilliputians” argue over whether to crack eggs from the “big end” or “little end”—hence “endianness.” 😊  
+**Fun fact**: The term comes from *Gulliver’s Travels*! In the book, the “Lilliputians” argue over whether to crack eggs from the “big end” or “little end”—hence “endianness.” 
 
 ---
 
-### 🔹 Examples in Context  
+### Examples in Context  
 1. “When transferring data between a big-endian server and a little-endian smartphone, we have to reverse the byte order to avoid errors.”  
 2. “The file format specifies big-endian encoding, so our software needs to adjust its endianness handling.”  
 3. “I forgot to check the endianness of the sensor data, and now the temperature readings are totally wrong!”  
 
 ---
 
-### 🔹 Short Interactive Exercise  
+### Short Interactive Exercise  
 Let’s test your understanding! Answer these:  
 
 1. If a system uses little-endian, how would it store the hexadecimal value `0xABCDEF01`?  
@@ -60,18 +60,19 @@ Let’s test your understanding! Answer these:
 
 ---
 
-### 🔹 Quick Recap  
+### Quick Recap  
 - **Endianness**: Order of bytes in memory (big = big byte first; little = little byte first).  
 - **Key takeaway**: It’s crucial for data consistency across systems (e.g., networks, files, hardware).  
 - **Pronunciation**: /ˈen-di-ə-nəs/ (EN-dee-uh-nus).  
 
 ---
 
-### 🔹 Mistake Log (for later review)  
+### Mistake Log (for later review)  
 None yet—let’s see how the exercise goes!  
 
 ---  
-**Your turn!** Answer the two questions above, and I’ll check them. No pressure—this is a tricky concept, so we’ll build up slowly. 😊  
+
+Your turn! Answer the two questions above, and I’ll check them. No pressure—this is a tricky concept, so we’ll build up slowly. 😊  
 
 *(P.S. If you’re not into tech, no worries—we can pivot to a non-tech word next time! Just let me know.)*
 
