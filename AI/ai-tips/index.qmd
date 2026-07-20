@@ -1,0 +1,13 @@
+---
+title: "AI Tips"
+# description: ""
+author: "Awesome Yi"
+date: "2026-07-20"
+categories: [tips]
+# image: cover.jpg
+---
+
+
+- The **"Vibe"** Over the **"Code"**: He argues that in this new era, the most valuable skills areclear direction, taste, and articulation. If you can clearly describe what you want andhave the "vibe" for a great product, the technical barriers are essentially gone.
+
+- **AI Coding**普及，让“*人人都能成为Builder*"这种理念有了现实基础。中国的新一代创业者，就藏在这群Builder之中。(来自财经杂志公众号，2026-06-29)

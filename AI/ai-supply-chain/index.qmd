@@ -1,0 +1,18 @@
+---
+title: "AI Supply Chain"
+description: "Across the World"
+author: "Awesome Yi"
+date: "2026-07-20"
+---
+
+# AI Supply Chain
+
+- 美国控制算法和资本 (OpenAI、谷歌、英伟达的设计)
+- 中国台湾控制先进制造 (台积电)
+- 日本控制上游材料 (味之素、信越化学)
+- 韩国控制的是存储
+
+---
+
+来自*正和岛*的文章（2026-05-15）
+

@@ -7,7 +7,15 @@ categories: [investment]
 # image: cover.jpg
 ---
 
-# [新西兰存款利率一览表 Saving Interest Rate of New Zealand](https://www.depositrates.co.nz/interest-rates/)
+# Saving Rates
+
+## [新西兰存款利率一览表 Saving Interest Rate of New Zealand](https://www.depositrates.co.nz/interest-rates/)
+
+## Kiwibank 定存一览表
+
+[Kiwibank 定存一览表](https://www.kiwibank.co.nz/personal-banking/rates-and-fees/interest-rates/interest-rates/)
+
+---
 
 # 在中国可以购买到的指数基金
 
@@ -30,6 +38,7 @@ categories: [investment]
 
 螺丝钉及其团队单独制作了**红利星级**，和大盘星级区分。在**今天几星**微信小程序可以看到。
 
+---
 
 # 投资心法
 

@@ -1,0 +1,25 @@
+---
+title: "秋叶AI三天训练营"
+description: "2026-07月"
+author: "Awesome Yi"
+date: "2026-07-20"
+categories: [tips]
+# image: cover.jpg
+---
+
+# SCQA模型
+
+- Situation (背景)
+- Complication (冲突)
+- Question (问题)
+- Answer （答案）
+
+# AI提示词注意事项
+
+- 不要长句，简洁直接使用词语，短语。用空格，逗号区分；
+- 越靠前，权重越大。
+
+# 即梦AI
+
+- **无限画布**功能很实用;
+- 实用即梦AI生成的数字资产，归属于生成者。
