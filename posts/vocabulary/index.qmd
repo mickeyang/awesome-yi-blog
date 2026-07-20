@@ -145,4 +145,12 @@ Some English and Chinese vocabulary
 
 - [sprawl](../../ai-english/english-sprawl.md)
 
-- [sprawl](../../ai-english/english-ergonomics.md)
+- [ergonomics](../../ai-english/english-ergonomics.md)
+
+# 2026-07-20
+
+- **延宕**, 在文中读音为yan(2) dang(4)，意为拖延、推迟。原文说“课程计划一直延宕”，指作者因未作好准备而迟迟未能启动音频课程，体现时间上的推迟与计划搁置。
+
+- **稻粱谋**, 本指禽鸟觅食，后比喻人为了衣食生计而奔波。原文说“在满足了‘稻梁谋’之后”，即当基本生计无忧，人才能追求内心的从容与宁静，找到真正的幸福。
+
+- **魑魅魍魉** (chī mèi wǎng liǎng), 比喻各种各样的坏人。
