@@ -1,0 +1,52 @@
+---
+title: "R dplyr Multi-Column Conditional Flagging — Interaction Summary"
+description: "if_any() and if_all()"
+author: "Awesome Yi"
+date: "2026-07-21"
+categories: [tips]
+---
+
+# Summary
+
+| Date       | Question / Topic                                                                                                          | AI Model          | Outcome / Takeaway                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-07-21 | Efficiently flag rows where any of `a, b, c, d` equals `"Yes"` (1/0) with **dplyr**, without checking columns one by one. | Yuanbao (Tencent) | Use `dplyr::if_any()` inside `mutate()` + `if_else()`: `if_else(if_any(c(a,b,c,d), ~ .x == "Yes"), 1, 0)`. `if_any()` is rowwise-vectorised (no `rowwise()` overhead). <br><br>Base R alternative: `rowSums(df[c(...)] == "Yes") > 0` for medium data. <br><br>For NA safety inside `if_any()`, prefer `%in%` over `==`.                                                                                                                                                                                                                                                                     |
+| 2026-07-21 | Advantages of `%in%` for accommodating `NA` values in conditional checks.                                                 | Yuanbao (Tencent) | Five advantages: <br><br>(1) **NA-safe** — `NA %in% "Yes"` returns `FALSE`, preventing NA propagation in `filter()`/`if_else()`; <br><br>(2) **vectorised on both sides** — set-membership semantics, unlike == which expects length-1 RHS; <br><br>(3) **factor-safe** — checks values, not internal level integers; <br><br>(4) **cleaner than `\|` chains** — e.g. `a %in% c("Yes","Y","y","1")` vs `a == "Yes" \| a == "Y" \| ...`; <br><br>(5) **composes with `if_any()`/`filter()`** — `~ .x %in% c("Yes","Y")` is idiomatic.                                                         |
+| 2026-07-21 | When using `if_any()`, why apply `~ .x` — explain the details.                                                            | Yuanbao (Tencent) | `if_any(.cols, .fns)` iterates over columns, passing each column vector into `.fns`, then reduces row-wise with `\|`. The `~` is purrr-style **lambda** shorthand for `function(.x) ...`, and `.x` is the pronoun for "the current column being iterated" (a full-length character vector, not a scalar). `~ .x == "Yes"` expands conceptually to applying `\(col) col == "Yes"` per column. Alternatives: `\(col) col == "Yes"` (R 4.1+ native lambda) or a pre-defined function. Prefer `.x` over bare `.` because `.` can ambiguously mean "the whole data frame" inside dplyr pipelines. |
+Using `%in%` instead of `'=='` inside `if_any()` avoids `NA` leaking into the result when any checked column contains `NA`.
+
+# Five Advantages of `%in%` (Expanded)
+
+| #   | Advantage                        | Why It Matters                                                              |
+| --- | -------------------------------- | --------------------------------------------------------------------------- |
+| 1   | NA-safe                          | `NA %in% "Yes"` → `FALSE`; `NA == "Yes"` → `NA` (propagates, kills filters) |
+| 2   | Vectorised both sides            | `x %in% c("A","B")` works; `x == c("A","B")` recycles dangerously           |
+| 3   | Factor-safe                      | Checks *values*, not internal integer codes — avoids level-mismatch bugs    |
+| 4   | Replaces `\|` chains             | `a %in% c("Yes","Y","y","1")` >> `a=="Yes" \| a=="Y" \| a=="y" \| a=="1"`   |
+| 5   | Pairs with `if_any()`/`filter()` | `~ .x %in% vec` is the idiomatic pattern inside column-iteration verbs      |
+
+# Code Snippet (canonical answer)
+
+```r
+library(dplyr)
+
+df %>%
+  mutate(
+    flag = if_else(if_any(c(a, b, c, d), ~ .x %in% "Yes"), 1, 0)
+  )
+```
+
+Using `%in%` instead of `'=='` inside `if_any()` avoids `NA` leaking into the result when any checked column contains `NA`.
+
+Key mental model: `.x` = one column at a time (vector of length `nrow(df)`); row-wise OR reduction happens *after* all columns are processed by `.fns`.
+
+```r
+# ~ .x form (most common)
+if_any(c(a, b, c, d), ~ .x == "Yes")
+
+# Equivalent native lambda (R 4.1+)
+if_any(c(a, b, c, d), \(col) col == "Yes")
+
+# Equivalent longhand
+if_any(c(a, b, c, d), function(col) col == "Yes")
+```

@@ -68,3 +68,5 @@ message(paste0("Current age is: ", age))
 ```
 - Using `tree /F /A > tree.txt` to print out a tree structure for files and folders. If do not need to save into a `txt` file, then simply remove the `> tree.txt` part. **NOTE**: run this in a Windows CMD.
 
+- Using `if_any()`​ OR `if_all()` function to check multiple columns at once. For example, `filter(if_any(c(col_a, col_b) %in% "Yes"))`.
+
