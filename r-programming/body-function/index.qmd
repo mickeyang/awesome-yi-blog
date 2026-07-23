@@ -1,0 +1,22 @@
+---
+title: "`body()` usage in R"
+author: "Awesome Yi"
+date: 2026-07-23
+categories: [TIPS]
+---
+
+| Date | Question/Topic | AI Model name | Outcome/Takeaway |
+|------|----------------|---------------|------------------|
+| 2026-07-23 | body() usage in R | Yuanbao | `body()` is a base R metaprogramming utility for extracting or replacing a function's executable logic.|
+
+# Key takeaways: 
+
+- Extract function bodies with `body(fn)` and convert to readable form via `deparse()` for source inspection; 
+
+- Replace a function body globally using `body(fn) <- quote(...)`, useful for debugging or temporary patches, but modifies behavior globally — prefer defining new functions in production; 
+
+- Multi-line bodies require `{}` wrapping; 
+
+- Combine with `map()` to batch-generate rule-based functions (e.g., threshold checks); embed external values with `substitute()` to avoid lazy binding issues; 
+
+- In targets pipelines, cache generated functions as RDS files to enable incremental computation. Also note `body()` is equivalent to `functionBody()`, and function arguments are accessed separately via `formals()`. 
