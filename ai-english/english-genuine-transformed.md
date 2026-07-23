@@ -15,7 +15,9 @@ We usually use it in three ways:
 2.  **Sincere (not pretended):** Genuine happiness.
 3.  **Honest (not lying):** A genuine person.
 ---
+
 ### 2. Examples in Context
+
 Let’s see how native speakers actually use it:
 *   **Objects:** "I was happy to see the watch was made of **genuine** gold."
 *   **Emotions:** "She showed **genuine** concern for my health." (It wasn't just polite talk).
@@ -24,18 +26,26 @@ Let’s see how native speakers actually use it:
 🔹 **Better word choice tip:** We often use "genuine" instead of simple words like "real" or "true" when we want to emphasize honesty or high quality.
 *   *Basic:* "I have real respect for her."
 *   *More natural:* "I have **genuine** respect for her."
+
 ---
+
 ### 3. Short Interactive Exercise
 Okay, now it's your turn. Try to fill in the blank with **genuine**.
 **Question:**
 "I could tell her smile was ______; she wasn't faking it."
 *(Type your answer below!)*
+
 ---
+
 ### 4. Quick Recap
 *   **Genuine = Real + Sincere.**
 *   Use it for **objects** (not counterfeit), **emotions** (not forced), and **people** (honest).
 *   Pronunciation: **JEN**-yuh-win.
+
 ---
+
 `Mistake Log:` *(Starting fresh! I'll note any patterns here as we go along.)*
+
 ---
+
 `Your turn!` Answer the question above, or try making your own sentence with "genuine"!
