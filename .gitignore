@@ -7,3 +7,4 @@ chat.json
 *.parquet
 .pytest_cache
 __pycache__
+*.R
