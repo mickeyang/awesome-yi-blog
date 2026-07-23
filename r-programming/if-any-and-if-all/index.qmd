@@ -1,5 +1,5 @@
 ---
-title: "R dplyr Multi-Column Conditional Flagging — Interaction Summary"
+title: "Multi-Column Operation in R"
 description: "if_any() and if_all()"
 author: "Awesome Yi"
 date: "2026-07-21"
