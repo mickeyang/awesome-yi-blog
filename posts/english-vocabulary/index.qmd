@@ -1,0 +1,23 @@
+---
+title: "English Vocabulary"
+author: "Awesome Yi"
+date: "2026-07-24"
+categories: [vocabulary]
+--- 
+
+Click on below links.
+
+- [CANONICAL](../../ai-english/english-canonical.md)    
+- [CRYPTIC](../../ai-english/english-cryptic-transformed.md)    
+- [ENDIANNESS](../../ai-english/english-endianness.md)    
+- [EPHEMERAL](../../ai-english/english-ephemeral.md)    
+- [ERGONOMICS](../../ai-english/english-ergonomics.md)    
+- [EXTRAPOLATION](../../ai-english/english-extrapolation.md)    
+- [GENUINE](../../ai-english/english-genuine-transformed.md)    
+- [HUNCH](../../ai-english/english-hunch.md)    
+- [IDIOMATIC](../../ai-english/english-idiomatic.md)    
+- [INTERPOLATION](../../ai-english/english-interpolation.md)    
+- [OBSCURE](../../ai-english/english-obscure.md)    
+- [OCTET](../../ai-english/english-octet.md)    
+- [SPOOFING](../../ai-english/english-spoofing.md)    
+- [SPRAWL](../../ai-english/english-sprawl.md)    
