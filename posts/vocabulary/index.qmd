@@ -119,34 +119,6 @@ Some English and Chinese vocabulary
 
 - stumble (to hit your foot on something when you are walking or running so that you fall or almost fall)
 
-# 2026-07-02
-
-- [extrapolation](../../ai-english/english-extrapolation.md)
-
-- [interpolation](../../ai-english/english-interpolation.md)
-
-- [obscure](../../ai-english/english-obscure.md)
-
-- [idiomatic](../../ai-english/english-idiomatic.md)
-
-- [genuine](../../ai-english/english-genuine.md)
-
-# 2026-07-19
-
-- [endianness](../../ai-english/english-endianness.md)
-
-- [ephemeral](../../ai-english/english-ephemeral.md)
-
-- [hunch](../../ai-english/english-hunch.md)
-
-- [octet](../../ai-english/english-octet.md)
-
-- [spoofing](../../ai-english/english-spoofing.md)
-
-- [sprawl](../../ai-english/english-sprawl.md)
-
-- [ergonomics](../../ai-english/english-ergonomics.md)
-
 # 2026-07-20
 
 - **延宕**, 在文中读音为yan(2) dang(4)，意为拖延、推迟。原文说“课程计划一直延宕”，指作者因未作好准备而迟迟未能启动音频课程，体现时间上的推迟与计划搁置。
