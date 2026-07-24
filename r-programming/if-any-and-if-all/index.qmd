@@ -3,7 +3,7 @@ title: "Multi-Column Operation in R"
 description: "if_any() and if_all()"
 author: "Awesome Yi"
 date: "2026-07-21"
-categories: [tips]
+categories: [TIPS]
 ---
 
 # Summary

@@ -3,7 +3,7 @@ title: "`renv` in R"
 description: "Project Level R Package Management"
 author: "Awesome Yi"
 date: "2026-07-12"
-categories: [tips]
+categories: [TIPS]
 # image: cover.jpg
 ---
 

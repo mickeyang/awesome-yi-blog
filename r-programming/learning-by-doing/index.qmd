@@ -3,7 +3,7 @@ title: "Learning by Doing"
 description: "R programming"
 author: "Awesome Yi"
 date: "2026-06-11"
-categories: [diary]
+categories: [TIPS]
 image: cover.jpg
 ---
 
