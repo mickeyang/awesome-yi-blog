@@ -1,10 +1,12 @@
 ---
 title: "Week One Day One (W1D1)"
-description: "Use `Generator` to prevent RAM crash"
+description: "Use `yield` / `next()` to prevent RAM crash"
 author: "Awesome Yi"
 date: "2026-05-25"
 categories: [Week1]
 ---
+
+- Review this page on July 25, 2026
 
 # Generator
 
