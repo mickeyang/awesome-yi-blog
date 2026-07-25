@@ -1,0 +1,103 @@
+---
+title: "Git Command"
+description: "Work with GIT by using command lines"
+author: "Awesome Yi"
+date: "2026-07-25"
+categories: [TIPS]
+---
+
+Here are the Git commands you'll use 90% of the time, grouped by where they fit in your daily workflow.
+
+## Initial setup
+
+```text
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+Set your identity once. It gets attached to every commit you make.
+
+## Start / clone a repo
+
+```text
+git init                  # turn current folder into a repo
+git clone <url>           # download an existing repo
+```
+
+## Check status (run this constantly)
+
+```text
+git status                # what's modified, staged, or untracked
+git diff                  # unstaged changes vs last commit
+git diff --staged         # staged changes vs last commit
+```
+
+## Stage & commit
+
+```text
+git add <file>            # stage a specific file
+git add .                 # stage all changes in current dir
+git commit -m "message"   # commit staged changes
+git commit -am "message"  # stage tracked files AND commit in one step
+git commit --amend        # fix the last commit message
+```
+> Running `git commit -m "..."` avoids the Vim editor issue you hit earlier — you supply the message directly on the command line.
+
+## Branches
+
+```text
+git branch                # list branches
+git branch <name>         # create a branch
+git checkout <name>       # switch to a branch
+git switch <name>         # modern alternative to checkout
+git checkout -b <name>    # create + switch in one go
+git merge <branch>        # merge a branch into current one
+git branch -d <name>      # delete a branch
+```
+
+## Sync with remote
+
+```text
+git remote add origin <url>   # link local repo to a remote
+git remote -v                 # list remotes
+git fetch                     # download changes (no merge)
+git pull                      # fetch + merge
+git push                      # upload your commits
+git push -u origin <branch>   # push and set upstream
+```
+
+## History & inspection
+
+```text
+git log                  # full commit history
+git log --oneline        # condensed, one line per commit
+git log --graph          # text-based branch graph
+git show <SHA>           # details of a specific commit
+git blame <file>         # who changed each line and when
+```
+
+## Undo / fix mistakes
+
+```text
+git restore <file>              # discard local changes to a file
+git reset HEAD <file>           # unstage a file, keep changes
+git reset --soft HEAD~1         # undo last commit, keep changes staged
+git reset --hard HEAD~1         # undo last commit, DISCARD changes
+git revert <SHA>                # new commit that undoes a past commit (safe for shared branches)
+```
+
+## Temporary stash (when you need to switch branches mid-work)
+
+```text
+git stash          # save uncommitted changes
+git stash pop      # bring them back
+```
+
+---
+
+**The daily loop you'll repeat most:**
+
+```text
+git status → git add . → git commit -m "msg" → git push
+```
+
+That's really the heart of it. Everything else (rebase, reflog, cherry-pick, etc.) comes up occasionally, but you can go a long way with just the commands above. 
