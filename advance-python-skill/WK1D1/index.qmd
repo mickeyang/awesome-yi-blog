@@ -20,7 +20,11 @@ A generator computes data **one item at a time**, only when asked. It acts as a 
 
 ## How
 
-Using the `yield` keyword instead of the `return` keyword in functions.
+- Using `yield` instead of `return` turns a function into a generator function. 
+
+- When called, it returns a **generator object**​ that produces values lazily​ - one at a - time, on demand. This lazy evaluation model means the generator holds minimal state in - memory (typically 100-200 bytes regardless of dataset size), making it ideal for processing large files, infinite sequences, or data pipelines where building a full list would exhaust system memory. 
+
+- However, the memory benefit is only realised if the generator yields values incrementally rather than accumulating them into a collection and yielding that collection.
 
 Example:
 
