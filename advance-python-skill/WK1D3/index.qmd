@@ -27,9 +27,17 @@ for user_id, page in clickstream_stream:
     user_activity[user_id].append(page)
 ```
 
+- Use `defaultdict(int)` when you need to count occurrences (e.g., word counts).
+
+- Use `defaultdict(set)` when you need unique values only and order is irrelevant.
+
+- Use `defaultdict(list)` when you need to **maintain** a collection of values in the **order** they arrived or when **duplicates** are **allowed**.
+
 ## `Counter` function
 
 A `Counter` is a special type of Python dictionary specifically designed for counting objects. Unlike a standard Python dictionary, a Counter won't throw a `KeyError` if you try to access a key that doesn't exist yet. Instead, it assumes the missing key has a starting count of 0.
+
+- most_common() and elements() functions available.
 
 ```
 from collections import Counter
