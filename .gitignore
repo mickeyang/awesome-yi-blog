@@ -8,3 +8,4 @@ chat.json
 .pytest_cache
 __pycache__
 *.R
+*.py
