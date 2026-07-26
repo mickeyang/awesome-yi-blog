@@ -70,3 +70,4 @@ message(paste0("Current age is: ", age))
 
 - Using `if_any()`​ OR `if_all()` function to check multiple columns at once. For example, `filter(if_any(c(col_a, col_b) %in% "Yes"))`.
 
+- Using `{{var}}` in R functions, `{{var}}` is considered the most modern and readable approach in tidyverse programming.
