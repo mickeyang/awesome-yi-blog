@@ -6,6 +6,8 @@ date: "2026-05-28"
 categories: [Week1]
 ---
 
+> Reviewed this page on July 25, 2026.
+
 # Iterables vs. Iterators
 
 In Python, there is a strict technical difference between an **Iterable** and an **Iterator**. As a data engineer, knowing this distinction helps you control exactly how and when data streams are loaded.

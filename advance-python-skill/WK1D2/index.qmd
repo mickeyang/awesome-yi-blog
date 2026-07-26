@@ -6,6 +6,8 @@ date: "2026-05-26"
 categories: [Week1]
 ---
 
+> Reviewed this page on July 25, 2026.
+
 # itertools
 
 The `itertools` is a built-in library of Python. 

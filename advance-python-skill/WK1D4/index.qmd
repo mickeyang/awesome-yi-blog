@@ -6,6 +6,8 @@ date: "2026-05-27"
 categories: [Week1]
 ---
 
+> Reviewed this page on July 25, 2026.
+
 # Why important?
 
 When running data pipelines, your code constantly interacts with external environments—opening files, initiating database connections, spinning up SSH tunnels, or downloading large payloads to local disk space. If your pipeline crashes mid-execution and leaves these connections or files open, you get resource leaks. This can block future runs, lock database tables, or exhaust your storage.

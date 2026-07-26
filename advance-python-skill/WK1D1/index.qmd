@@ -6,7 +6,7 @@ date: "2026-05-25"
 categories: [Week1]
 ---
 
-- Review this page on July 25, 2026
+- Reviewed this page on July 25, 2026
 
 # Generator
 

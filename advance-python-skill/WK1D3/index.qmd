@@ -6,6 +6,8 @@ date: "2026-05-26"
 categories: [Week1]
 ---
 
+> Reviewed this page on July 25, 2026.
+
 # Why it matters?
 
 Python’s **built-in** collections module provides specialized data structures written in C that make aggregations cleaner, faster, and more Pythonic.
