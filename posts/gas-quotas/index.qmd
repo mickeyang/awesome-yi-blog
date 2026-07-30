@@ -1,0 +1,10 @@
+---
+title: "Google Apps Script Quotas"
+description: "Stay with limited GAS Quotas"
+author: "Awesome Yi"
+date: "2026-07-30"
+---
+
+# Google Apps Script Quotas
+
+[Google Apps Script Quotas](https://developers.google.com/apps-script/guides/services/quotas)
