@@ -81,4 +81,25 @@ iris |>
   slice_head(n = 10)
 ```
 
+- Using `rmarkdown::pandoc_self_contained_html` to create a self-contained HTML web page. Attach an example as the following.
+
+```r
+library(gt)
+
+gt_tbl <- iris |> 
+  gt() |> 
+  opt_interactive(
+    use_sorting = TRUE,
+    use_search = TRUE,
+    use_filters = TRUE
+  )
+
+temp_html <- tempfile(fileext = ".html")
+gtsave(gt_tbl, temp_html)
+
+rmarkdown::pandoc_self_contained_html(
+  input = temp_html, 
+  output = "table_selfcontained.html"
+)
+```
 
