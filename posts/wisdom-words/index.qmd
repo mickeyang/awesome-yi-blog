@@ -1,0 +1,10 @@
+---
+title: "智慧之言"
+description: "Some Wisdom Words."
+author: "Awesome Yi"
+date: "2026-08-14"
+categories: [书摘]
+---
+
+只学习结论，就会被各种人的各种结论带着乱跑。学习思考逻辑，才能长出自己的判断。[马斯克最新采访:10年之后，金钱将失去意义]
+
