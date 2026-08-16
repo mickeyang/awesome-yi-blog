@@ -1,0 +1,53 @@
+---
+title: "Jitter"
+description: "Add in Jitters to Exponential Backoff"
+author: "Awesome Yi"
+date: "2026-08-16"
+categories: [Week2]
+---
+
+# Thundering Herds and Jitter: Building Resilient Data Pipelines
+
+When building distributed systems or data pipelines, implementing retry logic for transient failures is standard practice. A common approach is exponential backoff: wait 1 second, then 2, then 4, and so on. However, without a crucial ingredient called jitter, this well-intentioned logic can inadvertently cause a "thundering herd" problem.
+
+# What is the Thundering Herd Problem?
+
+Imagine a downstream service or database goes down briefly. You have 100 worker processes, threads, or containers all trying to call that service. When it comes back online, every single process retries its request at the exact same moment. This synchronized surge of traffic can overwhelm the service, causing it to crash again or become unresponsive. This phenomenon is known as the thundering herd. The term comes from the image of a large herd of animals stampeding at once: destructive and overwhelming.
+
+# Why Standard Retry Logic Fails
+
+The issue lies in synchronisation. If all 100 processes start their retry loops around the same time, they will all wait for the same calculated interval (say, 1 second) and then fire their requests simultaneously. They remain perfectly synchronized through each attempt, repeatedly hammering the service instead of backing off gracefully.
+
+# The Role of Jitter
+
+Jitter introduces **randomness** into the retry interval. Instead of waiting exactly 2 seconds, a process might wait anywhere between 0 and 2 seconds (or within another defined range). This randomness desynchronises the retries across your processes, spreading the load over a window of time rather than concentrating it into a single spike. The service receives a manageable, distributed stream of requests, allowing it to recover and stabilize.
+
+# Why This Matters in Data Engineering
+
+As data engineers, we operate in environments where this risk is high:
+
+• Batch jobs hitting data warehouses or external APIs on a schedule.
+
+• Pipeline orchestrators (like Airflow) retrying failed tasks.
+
+• Consumers reconnecting to message queues after a disconnect.
+
+• Spark jobs or worker nodes restarting after a deployment.
+
+Without jitter, a simple restart or a brief network blip can cascade into a self-inflicted denial-of-service attack on your own infrastructure, potentially leading to rate-limiting or complete outages.
+
+# Common Jitter Strategies
+
+There are several ways to implement jitter, each with its own trade-offs:
+
+1. **Full Jitter**: The sleep time is a random value between 0 and the calculated backoff (e.g., random(0, base * 2^n)). This is the most common recommendation.
+
+2. **Equal Jitter**: The sleep time is half the calculated backoff plus a random value between 0 and half the backoff. This prevents waiting too long.
+
+3. **Decorrelated Jitter**: The sleep time is a random value between the base and the previous sleep time multiplied by 3. This is useful for very long retry sequences.
+
+4. **No Jitter**: Simply using base * 2^n. This should be avoided in production environments due to the thundering herd risk.
+
+# Conclusion
+
+Implementing retry logic is easy; implementing it safely is harder. By adding jitter to your exponential backoff, you protect your downstream services and make your data pipelines truly resilient. It is a small detail that separates a working script from a production-grade system.
