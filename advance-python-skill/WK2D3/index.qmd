@@ -44,6 +44,23 @@ except ZeroDivisionError:
     logger.exception("An unhandled math error occurred during transformation.")
 ```
 
+# Differences between `StreamHandler` and `FileHandler`
+
+主要的区别在于“目的地”不同，`StreamHandler`是输出到Console/Terminal，`FileHandler`是输出到Disk上的文件。
+
+可以通过一个`logger`来统计管理两个不同的`Handler`，同时输出同样的log到不同的地方。
+
+
++-------------------+--------------------------------------------------------------------+----------------------------------+
+| Feature           | StreamHandler                                                      | FileHandler                      |
++-------------------+--------------------------------------------------------------------+----------------------------------+
+| Output Target     | Console / Terminal (sys.stdout / sys.stderr)                       | Text File on Disk (.log or .txt) |
++-------------------+--------------------------------------------------------------------+----------------------------------+
+| Persistence       | Volatile (Disappears when console closes)                          | Persistent (Saved on storage)    |
++-------------------+--------------------------------------------------------------------+----------------------------------+
+| Default in Python | Used behind the scenes by logging.basicConfig() for console output | Requires a specified file path   |
++-------------------+--------------------------------------------------------------------+----------------------------------+
+
 # Lab session
 
 ```
