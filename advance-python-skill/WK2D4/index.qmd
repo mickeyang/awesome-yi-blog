@@ -14,6 +14,10 @@ categories: [Week2]
 - Permanent Errors
 - Transient Errors
 
+In the event of transient errors, such as temporary database disconnections or unresponsive APIs, the pipeline can be resumed through **multiple retry attempts**, thereby ensuring the completion of the automated process.
+
+---
+
 # Lab session
 
 ```
