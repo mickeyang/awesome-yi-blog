@@ -1,5 +1,5 @@
 ---
-title: "Git Command"
+title: "Git Command for Github version control"
 description: "Work with GIT by using command lines"
 author: "Awesome Yi"
 date: "2026-07-25"
@@ -9,7 +9,7 @@ date: "2026-07-25"
 
 Here are the Git commands you'll use 90% of the time, grouped by where they fit in your daily workflow.
 
-## Initial setup
+# Initial setup
 
 ```text
 git config --global user.name "Your Name"
@@ -17,14 +17,14 @@ git config --global user.email "you@example.com"
 ```
 Set your identity once. It gets attached to every commit you make.
 
-## Start / clone a repo
+# Start / clone a repo
 
 ```text
 git init                  # turn current folder into a repo
 git clone <url>           # download an existing repo
 ```
 
-## Check status (run this constantly)
+# Check status (run this constantly)
 
 ```text
 git status                # what's modified, staged, or untracked
@@ -32,7 +32,7 @@ git diff                  # unstaged changes vs last commit
 git diff --staged         # staged changes vs last commit
 ```
 
-## Stage & commit
+# Stage & commit
 
 ```text
 git add <file>            # stage a specific file
@@ -43,7 +43,7 @@ git commit --amend        # fix the last commit message
 ```
 > Running `git commit -m "..."` avoids the Vim editor issue you hit earlier — you supply the message directly on the command line.
 
-## Branches
+# Branches
 
 ```text
 git branch                # list branches
@@ -55,7 +55,7 @@ git merge <branch>        # merge a branch into current one
 git branch -d <name>      # delete a branch
 ```
 
-## Sync with remote
+# Sync with remote
 
 ```text
 git remote add origin <url>   # link local repo to a remote
@@ -66,7 +66,7 @@ git push                      # upload your commits
 git push -u origin <branch>   # push and set upstream
 ```
 
-## History & inspection
+# History & inspection
 
 ```text
 git log                  # full commit history
@@ -76,7 +76,7 @@ git show <SHA>           # details of a specific commit
 git blame <file>         # who changed each line and when
 ```
 
-## Undo / fix mistakes
+# Undo / fix mistakes
 
 ```text
 git restore <file>              # discard local changes to a file
@@ -86,7 +86,7 @@ git reset --hard HEAD~1         # undo last commit, DISCARD changes
 git revert <SHA>                # new commit that undoes a past commit (safe for shared branches)
 ```
 
-## Temporary stash (when you need to switch branches mid-work)
+# Temporary stash (when you need to switch branches mid-work)
 
 ```text
 git stash          # save uncommitted changes
@@ -102,3 +102,31 @@ git status → git add . → git commit -m "msg" → git push
 ```
 
 That's really the heart of it. Everything else (rebase, reflog, cherry-pick, etc.) comes up occasionally, but you can go a long way with just the commands above. 
+
+---
+
+# Switch from HTTPS to SSH
+
+If your repo is:
+
+```
+https://github.com/yourname/myproject.git
+```
+
+Then the SSH equivalent is:
+
+```
+git@github.com:yourname/myproject.git
+```
+
+Check current GIT 
+
+```
+git remote -v
+```
+
+If not SSH, then use below code to switch
+
+```
+git remote set-url origin git@github.com:YOUR_USERNAME/YOUR_REPO.git
+```
