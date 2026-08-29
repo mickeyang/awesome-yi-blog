@@ -103,3 +103,8 @@ rmarkdown::pandoc_self_contained_html(
 )
 ```
 
+- Using `allow_non_interactive` argument to use `write_clip()` function in a non-interactive environment.
+
+```r
+clipr::write_clip(md_links, allow_non_interactive = TRUE)
+```
