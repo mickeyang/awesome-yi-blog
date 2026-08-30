@@ -1,0 +1,30 @@
+---
+title: "红米手机同步日历到Google"
+description: "Hard to archieve."
+author: "Awesome Yi"
+date: "2026-08-31"
+categories: [diary]
+image: cover.jpg
+---
+
+# 背景
+
+因为想利用Google Apps Script自动化谷歌日历，每天生成Agenda的报表，所以今天早上5点多起来，尝试在红米手机上同步Mi Calendar日历到Google日历。
+
+# 结果
+
+经过快3小时的努力，最终**失败**，放弃，在红米手机上卸载了Google Calendar。
+
+# 实现(achieved)
+
+1. 成功在红米手机上安装Google Calendar。
+2. 成功在Google Calendar中添加日历，并且能快速在网页版Google Calendar上查看。
+3. 成功在网页版Google Calendar添加日历，并且能快速在红米手机的Google Calendar上查看。
+
+# 难点(failed)
+
+1. 同步Google Calendar在中国网络环境下并不顺利，因为中国大陆境内禁止访问谷歌服务，硬件网络受限。
+2. 通过红米手机上的AI（小爱同学）添加日历的时候，只能添加到默认的手机自带的**Mi Calendar**日历软件，且**无法**自动挂载到Google Calendar 账户，需要手动切换或者复制，并不友好，增加管理时间成本。
+
+最终放弃了这个想法，继续沿用手机原生的Mi Calendar。有些遗憾。
+
