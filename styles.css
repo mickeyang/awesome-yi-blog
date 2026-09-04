@@ -1,1 +1,5 @@
 /* css styles */
+
+div#quarto-margin-sidebar {
+  text-transform: uppercase;
+}
