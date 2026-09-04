@@ -1,0 +1,30 @@
+---
+title: "AI Token Consumption"
+description: "Use AI Token in Programming IDE"
+author: "Awesome Yi"
+date: "2026-09-04"
+categories: [tips]
+image: cover.jpg
+---
+
+I have been using different AI model tokens in across different IDE platforms.
+
+# Positron
+
+I mainly used Positron for R programming development and other data science related tasks.
+
+I tried to use Chinese models in Positron but failed, hence I used my Github Copilot FREE license, which is working fine now.
+
+# Visual Code
+
+Visual Code can easily intergrate almost all AI model tokens. I installed the Extension called `OAI Compatible Provider for Copilot` to integrate Chinese (GLM) AI model very easily. Whereas, Positron could not install this extension hence I could not use this GLM model there.
+
+> The `OAI Compatible Provider for Copilot` extension is developed by *Johnny Zhao*.
+
+Moreover, I have also installed Huawei's `CodeArts Agent` extension which offers 500M **FREE** tokens each month. The extension's free tokens are also based on the GLM model as of 2026-09-04. After I exhaust the GLM tokens, I will change to Huawei's `CodeArts Agent` for development in **VS Code**.
+
+# US Models
+
+Currently, I am NOT using any US AI models as they do not provide any free tokens. Besides, it is not reliable to use US models in mainland China.
+
+Having it said, I did use US models (from Anthropic and OpenAI) via the **Snowflake** AI agent called `Coco`. I found the agent was quite "smart" and productive. Using Coco did not consume any tokens but Snowflake credits.
