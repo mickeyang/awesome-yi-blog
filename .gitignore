@@ -9,3 +9,4 @@ chat.json
 __pycache__
 *.R
 *.py
+*.bat
