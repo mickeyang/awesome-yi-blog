@@ -1,0 +1,14 @@
+---
+title: "NDZ to CNY"
+description: "Currency exchange trending"
+author: "Awesome Yi"
+date: "2026-09-20"
+categories: [diary]
+image: cover.jpg
+---
+
+今天是2026年9月20日，纽币兑换人民币的汇率跌到了历史最低记录。
+
+MARK一下，要等美元降息才行了，且有些日子要等。
+
+！[纽币兑换人民币的汇率历史](cover.jpg)
