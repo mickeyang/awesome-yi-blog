@@ -1,5 +1,5 @@
 ---
-title: "NDZ to CNY"
+title: "NZD to CNY"
 description: "Currency exchange trending"
 author: "Awesome Yi"
 date: "2026-09-20"
